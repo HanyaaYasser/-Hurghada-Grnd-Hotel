@@ -1,0 +1,994 @@
+
+/* Style the header with a grey background and some padding */
+.header {
+  /* overflow: hidden; */
+  padding: 20px 10px;
+  
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color:#8e6d45;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header .logo {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  color:white;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+
+    float: right;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    align-items: right;
+    padding: 10px ;
+    padding-left: 690px;
+
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color:#8e6d45;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn { color: white; }
+
+
+
+/* section {
+    padding: 100px 200px;
+
+} */
+
+.main {
+
+    width: 100%;
+    min-height: 100vh;
+    display:flex;
+    align-items: center;
+    background-image: url(images/all.jpeg);
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    
+}
+
+.main h2{
+    font-family: "Gilda Display", serif;
+    font-size: 15px;
+    font-weight: 100px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    animation-delay: 0.4s;
+    margin: 0px 0px 20px;
+    margin-left: 10px;
+}
+
+.main h1 {
+ 
+    margin-bottom: 20px;
+    margin-top: 8px;
+    font-family: "Gilda Display", serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    line-height: 1.35em;
+    animation-delay: 0.6s;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    letter-spacing: 15px;
+   text-align: center;
+ 
+}
+.checked {
+    color: orange;
+    
+}
+.fa-star {
+    /* text-align: center; */
+    margin-bottom: 30px;
+}
+
+/* .main h2 span {
+    display: inline-block;
+    margin-top: 5px;
+    color: white;
+    font-size: 4em;
+    font-weight: 600;
+
+} */
+
+.main_button {
+    color: white;
+    border-style: solid;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    /* border-radius: 15px; */
+    margin-bottom: 40px;
+    align-items: center ;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 500px;
+
+}
+.main_button span {
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+ }
+
+.main_button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.main_button:hover span {
+  padding-right: 25px;
+}
+
+.main_button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* .main_button:hover {
+  
+    transform:scale(1.1);
+
+} */
+
+.logo-wrapper {
+    float: left;
+    padding: 15px;
+}
+
+.logo-wrapper {
+    float: left;
+}
+
+
+/*
+.next h3 {
+    font-size: 1.3em;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.next h1 {
+    font-size: 2em;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.content {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.parag {
+    text-decoration: none;
+    font-size: medium;
+    font-weight: 500;
+
+}
+
+.pics {
+
+    align-items: right;
+    height:1em;
+    width: 2em;
+
+}
+*/
+
+/* .title2 {
+    display:flex;
+    justify-content: flex;
+    font-size: 45px;
+    font-weight: 350;   
+    font-family: 'Gilda Display', serif;
+} */
+
+.content2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* ayezhom gamb baad msh taht baad*/
+    flex-wrap: wrap; /*size el cards tefdal zay maheya law mfesh space wkda*/
+}
+
+.cards {
+    background: url(images/1.jpg) no-repeat;
+    width: 14em;
+    height: 24em;
+    background-size: cover;
+    padding: 20px; /*space gowa el element*/
+    margin:  13px;     /*space between elements*/
+}
+
+.cards .info2 {
+    background: url(images/3.jpg) no-repeat;
+}
+
+
+.rooms .content2 .cards .info {
+    padding: 20px;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    z-index: 20;
+    height: auto;
+    box-sizing: border-box;
+
+
+}
+
+
+.info h3 {
+    font-size: 1em;
+    font-weight: 100;
+    font-size: medium;
+    display: inline;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+
+}
+
+.info h2 {
+    font-size:2em;
+    font-weight: 150;
+    margin: 0%;
+    position: relative;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+h2 h3 {
+    margin: 0 0 20px 0;
+}
+
+
+ .rooms  content2 cards category {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: uppercase;
+    font-size: 15px;
+    background: transparent;
+    font-family: 'Barlow Condensed', sans-serif;
+    padding: 10px 3px;
+    line-height: 1.5em;
+    color: white;
+    border: solid;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+
+}
+
+
+.rooms1 .facilities ul li i {
+    margin-right: 10px;
+}
+
+
+.col .col-md-7 {
+position: relative;
+width: 100%;
+min-height: 1px;
+padding-right: 15px;
+padding-left: 15px;
+}
+
+
+
+
+    /*----------about---------*/
+html,
+body {
+    font-smoothing: antialiased;
+}
+* {
+    margin: 0;
+    padding: 0;
+   
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    word-wrap: break-word;
+}
+body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75em;
+    color: #666;
+    overflow-x: hidden !important;
+}
+p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75em;
+    color: #666;
+    margin-bottom: 20px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Gilda Display', serif;;
+    font-weight: 400;
+    line-height: 1.25em;
+    margin: 0 0 20px 0;
+    color: #222;
+}
+img {
+    width: 100%;
+    height: 100%;
+    height: auto;
+}
+img {
+    
+    transition: all 0.5s;
+    color: #f4f4f4;
+}
+span,
+a,
+a:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+b {
+    font-weight: 400;
+    color: #aa8453;
+}
+
+
+div {
+    display: block;
+}
+
+
+/*background*/
+.bg-cream {
+    background: #f8f5f0 ;
+}
+
+
+
+.section-padding {
+    padding: 120px 0;
+}
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+.section-subtitle {
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    color: #666;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+}
+.section-subtitle span {
+    color: #aa8453;
+   }
+
+
+.section-title {
+    font-size: 45px;
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    color: #222;
+    position: relative;
+    margin-bottom: 20px;
+    line-height: 1.25em;
+}
+
+.section-title span {
+    color: #fff;
+}
+
+.col-md-4 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+.rooms1 .item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    width: 14em;
+    height: 24em;
+}
+
+.rooms1 .item img {
+    transition: all .5s;
+}
+
+.img-fluid {
+max-width: auto;
+height: 100%;
+}
+
+.position-re {
+    position: relative;
+}
+
+.o-hidden {
+    overflow: hidden;
+}
+
+.rooms1 .item .category {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    font-family: 'Barlow Condensed', sans-serif;
+    padding: 10px 3px;
+    line-height: 1.5em;
+}
+
+.rooms1 .item .category a {
+    color: #fff;
+}
+.rooms1 .item .category:hover {
+    color: #fff;
+}
+
+
+
+.rooms1 .item .con  {
+    padding: 20px;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    transition: all .3s;
+    text-align: left;
+    z-index: 20;
+    height: auto;
+    box-sizing: border-box;
+    background: (top, transparent 0, rgba(0, 0, 0, .1) 2%, rgba(0, 0, 0, .75) 90%);
+    background: (top, transparent 0, rgba(0, 0, 0, .01) 2%, rgba(0, 0, 0, .75) 90%);
+    background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, .01) 2%, rgba(0, 0, 0, .75) 90%);
+}
+
+.rooms1 .item .con h6,
+.rooms1 .item .con h6 a {
+    position: relative;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    display: inline;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.rooms1 .item .con h6 i {
+    font-size: 6px;
+    margin-right: 2px;
+}
+
+.rooms1 .item .con h5,
+.rooms1 .item .con h5 a {
+    position: relative;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.rooms1 .item .con i {
+    color: #fff;
+    font-size: 18px;
+}
+.rooms1 .item .con i:hover {
+    color: #fff;
+}
+
+.rooms1 .item .con .butn-light {
+    margin-left: 0;
+    border-radius: 30px;
+    border-color: #666;
+    padding: 11px 30px;
+}
+.rooms1 .item .con .butn-light:hover {
+    border-color: #aa8453;
+}
+
+
+/*line animation*/
+.rooms1 .item .line {
+    text-align: center;
+    height: 1px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    margin: auto 0 30px;
+}
+
+.line {
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+.rooms1 .item:hover .line {
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+
+
+.col .col-md-7 .col-md-5 .col-md-6{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/*icons*/
+.rooms1 .item .con i {   
+    color: #fff;
+    font-size: 18px;
+}
+
+
+.text-right {
+    text-align: right;
+}
+
+/*permalink*/
+.rooms1 .item .con .permalink {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s ease;
+    display: inline;
+}
+.rooms1 .item .con .permalink a {
+    color: #fff;
+    text-align: right;
+}
+.rooms1 .item .con .permalink i {
+   font-size: 10px;
+    text-align: right;
+}
+.rooms1 .item .con .permalink a:hover,
+.rooms1 .item .con .permalink i:hover {
+color: #aa8453;
+}
+
+
+/*shakl el cards*/
+ .row .col-md-4 { 
+  
+    display: flex;
+    justify-content:center;
+    flex-direction: row; /* ayezhom gamb baad msh taht baad*/
+    flex-wrap: wrap; /*size el cards tefdal zay maheya law mfesh space wkda*/
+
+}
+
+
+
+ /*facilities*/
+
+ .row {
+  
+    display: flex;
+    flex-direction: row; /* ayezhom gamb baad msh taht baad*/
+    flex-wrap: wrap; /*size el cards tefdal zay maheya law mfesh space wkda*/
+
+}
+.info {
+    color: black;
+
+}
+
+
+
+
+
+
+.section-subtitle {
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    color: #666;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+}
+
+
+
+
+.section-title {
+    font-size: 45px;
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    color: #222;
+    position: relative;
+    margin-bottom: 20px;
+    line-height: 1.25em;
+    display: flex;
+}
+
+
+.facilties .facility {
+    background: transparent;
+    padding: 30px 20px;
+    transition: .5s;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    line-height: 1;
+    border: 1px solid #f1eeeb;
+}
+
+.js .animate-box {
+    opacity: 0;
+}
+
+
+
+  /*about page*/
+
+  .js .animate-box {
+    opacity: 0;
+}
+
+
+
+.mb {
+    padding-left: 1000px;
+    padding-top: 10px;
+    margin-bottom: 5000px;
+    margin-top: 7px;
+}
+
+
+.mt {
+    padding-left: 1px;
+    padding-top: 2px;
+    padding-right: 1000px;
+    margin-top: 9px;
+    margin-bottom: 200px;
+}
+
+
+.fadeInUp{
+    animation-name: fadeInUp;
+
+}
+
+.animated {
+    animation-fill-mode: both;
+}
+
+img {
+    width: 30%;
+    height: auto;
+    vertical-align: right;
+    position:right ;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.col .col-md-3 .col-md-6 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; 
+}
+
+i {
+    font-style: italic;
+}
+
+/* span {
+    display: inline-block;
+    text-decoration: none;
+} */
+
+ .about-subtitle{
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    color: #666;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.reservations {
+    display: flex;
+    align-items: center;
+    
+}
+
+.reservations .text {
+    margin-left: 20px;
+}
+
+.reservations .text a {
+
+    font-size: 24px;
+    color: #8e6d45;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+.about-title{
+    font-size: 45px;
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    color: #222;
+    position: relative;
+    margin-bottom: 20px;
+    line-height: 1.25em;
+    top: -70px;
+    left: -230px;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+section {
+    display: block;
+}
+
+.container2 {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 700px;
+}
+   
+
+/*---------Footer-------*/
+.footer{
+    background-color: #222;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+    
+}
+li {
+    display: list-item;
+}
+
+
+.footer .box-container .box h3{
+    padding:.5rem 0;
+    font-size: 2.5rem;
+    color:var(--black);
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    margin-left: 10px;
+}
+.footer .box-container .box p
+{
+    margin-left: 10px;
+
+}
+.footer .box-container .box a{
+    display: block;
+    padding:.5rem 0;
+    font-size: 1.5rem;
+    color:var(--light-color);
+}
+
+.footer .box-container .box a:hover{
+    
+    text-decoration:line-through;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    font-size: 2rem;
+    color:var(--black);
+    padding:.5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer .credit span{
+    color:var(--green);
+}
+
+.loader-container{
+    position: fixed;
+    top:0; left:0;
+    height:100%; 
+    width:100%;
+    z-index: 10000;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+ 

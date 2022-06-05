@@ -1,0 +1,234 @@
+.checked {
+    color: orange;
+    
+}
+.fa-star {
+    margin-bottom: 30px;
+}
+
+.js .animate-box {
+    opacity: 0;
+}
+
+
+
+
+.mb {
+
+    padding-left: 1000px;
+    padding-top: 10px;
+    margin-bottom: 5000px;
+    margin-top: 7px;
+    
+}
+
+
+.mt {
+
+    padding-left: 1px;
+    padding-top: 2px;
+    padding-right: 1000px;
+    margin-top: 9px;
+    margin-bottom: 200px;
+}
+
+
+.fadeInUp{
+    animation-name: fadeInUp;
+
+}
+
+.animated {
+    animation-fill-mode: both;
+}
+
+img {
+    width: 20%;
+    height: auto;
+    vertical-align: right;
+    position:right ;
+ 
+
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.col .col-md-3 .col-md-6 {
+
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; 
+
+}
+
+i {
+    font-style: italic;
+}
+
+span {
+
+    display: inline-block;
+    text-decoration: none;
+
+}
+ .section-subtitle{
+font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    color: #666;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+}
+
+p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+.reservations {
+    display: flex;
+    align-items: center;
+    
+}
+
+.reservations .text {
+    margin-left: 20px;
+}
+
+.reservations .text a {
+
+    font-size: 24px;
+    color: #8e6d45;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+}
+
+.reservations .icon {
+    position: relative;
+    top: 3px;
+}
+.reservations .icon span {
+    font-size: 35px;
+    color: #8e6d45;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+.section-title{
+    font-size: 45px;
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    color: #222;
+    position: relative;
+    margin-bottom: 20px;
+    line-height: 1.25em;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+section {
+    display: block;
+    
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*---------Footer-------*/
+.footer{
+    background-color: #222;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+    
+}
+li {
+    display: list-item;
+}
+
+
+.footer .box-container .box h3{
+    padding:.5rem 0;
+    font-size: 2.5rem;
+    color:var(--black);
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    margin-left: 10px;
+}
+.footer .box-container .box p
+{
+    margin-left: 10px;
+
+}
+.footer .box-container .box a{
+    display: block;
+    padding:.5rem 0;
+    font-size: 1.5rem;
+    color:var(--light-color);
+}
+
+.footer .box-container .box a:hover{
+    
+    text-decoration:line-through;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    font-size: 2rem;
+    color:var(--black);
+    padding:.5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer .credit span{
+    color:var(--green);
+}
+
+.loader-container{
+    position: fixed;
+    top:0; left:0;
+    height:100%; 
+    width:100%;
+    z-index: 10000;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+#hp  {
+    float: right;    
+     margin: 0 0 0 15px;
+    }

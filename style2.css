@@ -1,0 +1,414 @@
+/*about*/
+html,
+body {
+    font-smoothing: antialiased;
+}
+* {
+    margin: 0;
+    padding: 0;
+   
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    word-wrap: break-word;
+}
+body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75em;
+    color: #666;
+    overflow-x: hidden !important;
+    
+}
+p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75em;
+    color: #666;
+    margin-bottom: 20px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Gilda Display', serif;;
+    font-weight: 400;
+    line-height: 1.25em;
+    margin: 0 0 20px 0;
+    color: #222;
+}
+img {
+    width: 100%;
+    height: 100%;
+    height: auto;
+}
+img {
+    
+    transition: all 0.5s;
+    color: #f4f4f4;
+}
+span,
+a,
+a:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+b {
+    font-weight: 400;
+    color: #aa8453;
+}
+
+
+div {
+    display: block;
+}
+
+
+/*background*/
+.bg-cream {
+    background: #f8f5f0 ;
+}
+
+.bg-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 991px)
+.bg-fixed {
+    background-attachment: scroll !important;
+}
+
+.section-padding {
+    padding: 120px 0;
+   
+}
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+.section-subtitle {
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    color: #666;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+}
+.section-subtitle span {
+    color: #aa8453;
+   }
+
+
+.section-title {
+    font-size: 45px;
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    color: #222;
+    position: relative;
+    margin-bottom: 20px;
+    line-height: 1.25em;
+}
+
+.section-title span {
+    color: #fff;
+}
+
+.col-md-4 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+.rooms1 .item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    width: 14em;
+    height: 24em;
+}
+
+.rooms1 .item img {
+    transition: all .5s;
+}
+
+
+.position-re {
+    position: relative;
+}
+
+.o-hidden {
+    overflow: hidden;
+}
+
+.rooms1 .item .category {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    font-family: 'Barlow Condensed', sans-serif;
+    padding: 10px 3px;
+    line-height: 1.5em;
+}
+
+.rooms1 .item .category a {
+    color: #fff;
+}
+.rooms1 .item .category:hover {
+    color: #fff;
+}
+
+
+
+.rooms1 .item .con  {
+    padding: 20px;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    transition: all .3s;
+    text-align: left;
+    z-index: 20;
+    height: auto;
+    box-sizing: border-box;
+    background: (top, transparent 0, rgba(0, 0, 0, .1) 2%, rgba(0, 0, 0, .75) 90%);
+    background: (top, transparent 0, rgba(0, 0, 0, .01) 2%, rgba(0, 0, 0, .75) 90%);
+    background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, .01) 2%, rgba(0, 0, 0, .75) 90%);
+}
+
+.rooms1 .item .con h6,
+.rooms1 .item .con h6 a {
+    position: relative;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    display: inline;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.rooms1 .item .con h6 i {
+    font-size: 6px;
+    margin-right: 2px;
+}
+
+.rooms1 .item .con h5,
+.rooms1 .item .con h5 a {
+    position: relative;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.rooms1 .item .con i {
+    color: #fff;
+    font-size: 18px;
+}
+.rooms1 .item .con i:hover {
+    color: #fff;
+}
+
+.rooms1 .item .con .butn-light {
+    margin-left: 0;
+    border-radius: 30px;
+    border-color: #666;
+    padding: 11px 30px;
+}
+.rooms1 .item .con .butn-light:hover {
+    border-color: #aa8453;
+}
+
+
+/*line animation*/
+.rooms1 .item .line {
+    text-align: center;
+    height: 1px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    margin: auto 0 30px;
+}
+
+.line {
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+.rooms1 .item:hover .line {
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+
+
+.col .col-md-7 .col-md-5 .col-md-6{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/*icons*/
+.rooms1 .item .con i {   
+    color: #fff;
+    font-size: 18px;
+}
+
+
+.text-right {
+    text-align: right;
+}
+
+/*permalink*/
+.rooms1 .item .con .permalink {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s ease;
+    display: inline;
+}
+.rooms1 .item .con .permalink a {
+    color: #fff;
+    text-align: right;
+}
+.rooms1 .item .con .permalink i {
+   font-size: 10px;
+    text-align: right;
+}
+.rooms1 .item .con .permalink a:hover,
+.rooms1 .item .con .permalink i:hover {
+color: #aa8453;
+}
+
+
+/*shakl el cards*/
+ .row .col-md-4 { 
+  
+    display: flex;
+    justify-content:center;
+    flex-direction: row; /* ayezhom gamb baad msh taht baad*/
+    flex-wrap: wrap; /*size el cards tefdal zay maheya law mfesh space wkda*/
+
+}
+
+/*---------Footer-------*/
+.footer{
+    background-color: #222;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+    
+}
+li {
+    display: list-item;
+}
+
+
+.footer .box-container .box h3{
+    padding:.5rem 0;
+    font-size: 2.5rem;
+    color:var(--black);
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    margin-left: 10px;
+}
+.footer .box-container .box p
+{
+    margin-left: 10px;
+
+}
+.footer .box-container .box a{
+    display: block;
+    padding:.5rem 0;
+    font-size: 1.5rem;
+    color:var(--light-color);
+}
+
+.footer .box-container .box a:hover{
+    
+    text-decoration:line-through;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    font-size: 2rem;
+    color:var(--black);
+    padding:.5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer .credit span{
+    color:var(--green);
+}
+
+.loader-container{
+    position: fixed;
+    top:0; left:0;
+    height:100%; 
+    width:100%;
+    z-index: 10000;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+
+
