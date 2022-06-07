@@ -1,0 +1,79 @@
+<style>
+* {
+  box-sizing: border-box;
+
+}
+
+body {
+ background-image: url(1.JPG);
+ 
+  background-size: cover;
+
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: white;
+  color: black;
+}
+
+
+.content {
+  background-color:white;
+  padding: 10px;
+  height: 950px; 
+}
+.rooms {
+  border: 10px solid transparent;
+  margin-bottom: 25px;
+  width: 100%; 
+ 
+}
+.modal-bg
+            {
+                display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+
+            }
+            .modal-bg.show
+            {
+                opacity: 1;
+            }
+            .modal
+            {
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px 50px;
+            }
+            .modal-btn
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+</style>
