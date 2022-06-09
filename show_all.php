@@ -1,4 +1,4 @@
-
+<?php include "receptionist1.php";?>
 <html>
     <head>
         <style>
@@ -18,7 +18,9 @@ color : white;
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
 </html>
-<?php include "receptionist1.php";?>
+
+</html> 
+
 <?php
 $conn = new mysqli("localhost","root","","hotel");
 $query=$query = "SELECT * FROM room";
