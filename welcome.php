@@ -30,7 +30,7 @@
                 <!-- <a href="rooms"> Rooms </a> -->
                 <a href="about.html"> About </a>
                 <a href="Restaurant.php"> Restaurant</a>
-                <a href="contact.html"> Contact us </a>
+                <a href="contact.php"> Contact us </a>
                 <a href="log In.php"> Login</a>
                 
             </div>
@@ -49,7 +49,7 @@
 </center>
             <h2> Luxury Hotel and Best Resort </h2>
             <h1> Enjoy A Luxury Experience </h1>
-            <a href="Rooms.php" class="main_button" > <span>Rooms & Suits </span></a>
+            <a href="#rooms" class="main_button" > <span>Rooms & Suits </span></a>
 
         </div>
   
@@ -107,6 +107,9 @@
             </div>
             <div class="col col-md-3 animate-box" >
                 <img src="images/rest.jpg" width="95" height="84" style="margin:10px " >
+            </div>
+            <div class="col col-md-3 animate box" > 
+                <img src="images/2.jpg"   width="95" height="84" style="float: right;" justify-content="space-between" >
             </div>
         </div>
     </section>
@@ -186,7 +189,8 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="position-re o-hidden" > <img style="width: 300px; height:350px;" src='<?=$row['img4'];?>'></img></div>
-                        <span class="category"> <a href= "Rooms.php"> Book </a></span>  <!--booking page-->
+                        <!-- <span class="category"> <a href= "Rooms.php"> Book </a></span>  booking page -->
+
                         <?php
         }
       }
@@ -235,7 +239,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="position-re o-hidden"> <img style="width: 300px; height:350px;" src='<?=$row['img5'];?>'></img></div>
-                        <span class="category"> <a href= "Rooms.php"> Book </a></span>  <!--booking page-->
+                        <!-- <span class="category"> <a href= "Rooms.php"> Book </a></span>  booking page -->
                         <?php
         }
       }
@@ -283,7 +287,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="position-re o-hidden"><img style="width: 300px; height:350px;" src='<?=$row['img6'];?>'></img></div>
-                        <span class="category"><a href="Rooms.php">Book</a></span>
+                        <!-- <span class="category"><a href="Rooms.php">Book</a></span> -->
                         <?php
         }
       }
@@ -332,7 +336,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="position-re o-hidden"> <img style="width: 300px; height:350px;" src='<?=$row['img7'];?>'></img></div>
-                        <span class="category"><a href="Rooms.php">Book</a></span>
+                        <!-- <span class="category"><a href="Rooms.php">Book</a></span> -->
                         <?php
         }
       }
@@ -373,6 +377,7 @@ if ($result->num_rows > 0) {
 
 
 
+
 <!--footer-->
 <footer class="footer">
     <div class="box-container">
@@ -388,8 +393,8 @@ if ($result->num_rows > 0) {
                     <div class="footer-column footer-explore">
                         <h3 class="footer-title" style="color: aliceblue;" > Explore </h3>
                         <ul class="footer-explore-list list-unstyled">
-                            <li><a href="welcome.php" style="color:gray">Home</a></li>
-                            <li><a href="Rooms.php" style="color:gray">Rooms & Suites</a></li>
+                            <li><a href="welcome.html" style="color:gray">Home</a></li>
+                            <li><a href="page2.html" style="color:gray">Rooms & Suites</a></li>
                             <li><a href="Restaurant.php" style="color:gray">Restaurant</a></li>
                             <li><a href="about.html" style="color:gray">About Hotel</a></li>
                             <li><a href="contact.html" style="color:gray">Contact</a></li>
@@ -438,116 +443,6 @@ if ($result->num_rows > 0) {
 
 </html>
  <style>
-       .main {
-  
-  width: 100%;
-  min-height: 100vh;
-  display:flex;
-  align-items: center;
-  background-image: url(all.jpeg);
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  
-  
-}
-.main h2{
-      font-family: "Gilda Display", serif;
-      font-size: 15px;
-      font-weight: 100px;
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      color: rgb(255, 255, 255);
-      text-align: center;
-      margin-bottom: 20px;
-      margin-top: 20px;
-      animation-delay: 0.4s;
-      margin: 0px 0px 20px;
-      margin-left: 350px;
-  }
-  
-  .main h1 {
-   
-      margin-bottom: 20px;
-      margin-top: 8px;
-      font-family: "Gilda Display", serif;
-      font-size: 60px;
-      text-transform: uppercase;
-      line-height: 1.35em;
-      animation-delay: 0.6s;
-      color: rgb(255, 255, 255);
-      font-weight: 400;
-      letter-spacing: 15px;
-     text-align: center;
-     margin-left: 300px;
-   
-  }
-  .checked {
-      color: orange;
-      
-  }
-  .fa-star {
-      /* text-align: center; */
-      margin-bottom: 30px;
-  }
-  
-  /* .main h2 span {
-      display: inline-block;
-      margin-top: 5px;
-      color: white;
-      font-size: 4em;
-      font-weight: 600;
-  } */
-  
-  .main_button {
-      color: white;
-      border-style: solid;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 400;
-      display: inline-block;
-      padding: 0.9375em 2.1875em;
-      letter-spacing: 1px;
-      /* border-radius: 15px; */
-      margin-bottom: 40px;
-      align-items: center ;
-      text-transform: uppercase;
-      cursor: pointer;
-      margin-left: 800px;
-  
-  }
-  .main_button span {
-      cursor: pointer;
-      display: inline-block;
-      transition: 0.5s;
-   }
-  
-  .main_button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .main_button:hover span {
-    padding-right: 25px;
-  }
-  
-  .main_button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
-  
-  /* .main_button:hover {
-    
-      transform:scale(1.1);
-  } */
-  
-  
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
