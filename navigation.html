@@ -1,0 +1,136 @@
+
+<html>
+<body>
+    <header>
+        <nav>
+          <div class="header">
+            <a href="#default" class="logo">logo</a>
+            <div class="header-right">
+                <a href="home"> Home </a>
+                <div class="dropdown">
+                    <button class="dropbtn">Rooms & Suits</button>
+                    <div class="dropdown-content">
+                      <a href="page2.html"> Room 1</a>
+                      <a href="Rooms.php"> Room 2</a>
+                      <a href="#">Room 3</a>
+                    </div>
+                  </div>
+                <!-- <a href="rooms"> Rooms </a> -->
+                <a href="about.html"> About </a>
+                <a href="Restaurant.php"> Restaurant</a>
+                <a href="contact.html"> Contact us </a>
+                <a href="log In.php"> Login</a>
+                
+            </div>
+          </div>
+        </nav>
+ </header>
+</html>
+
+ <style>
+     /* Style the header with a grey background and some padding */
+.header {
+  /* overflow: hidden; */
+  padding: 20px 10px;
+  
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color:#8e6d45;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header .logo {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  color:white;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+
+    float: right;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    align-items: right;
+    padding: 10px ;
+    padding-left: 690px;
+
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color:#8e6d45;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn { color: white; }
+ </style>
