@@ -1025,7 +1025,7 @@ color: #aa8453;
     .nav-scroll {
         background: #fff;
 }
-    }
+}
     .logo-wrapper {
         float: left;
         padding: 15px;
@@ -1034,7 +1034,7 @@ color: #aa8453;
         padding: 15px;
         background-color: #fff;
     }
-}
+
 
 
 /* ======= Header style ======= */
@@ -4123,7 +4123,7 @@ button.mfp-arrow {
 }
 .footer-explore-list li a:hover {
   padding-left: 15px;
-  color: #aa8453);
+  color: #aa8453;
 }
 .footer-explore-list li a:before {
   position: absolute;

@@ -1,7 +1,7 @@
 /*about*/
-html,
+
 body {
-    font-smoothing: antialiased;
+    font-smooth: antialiased;
 }
 * {
     margin: 0;
@@ -79,11 +79,11 @@ div {
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 991px)
+@media screen and (max-width: 991px){
 .bg-fixed {
     background-attachment: scroll !important;
 }
-
+}
 .section-padding {
     padding: 120px 0;
    
