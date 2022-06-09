@@ -2,7 +2,7 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    font-smooth: antialiased;
 }
 * {
     margin: 0;
