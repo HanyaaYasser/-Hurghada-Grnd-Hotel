@@ -1,3 +1,3 @@
-<?php include "nagigation.php" ?>
+<?php include "navigation.php" ?>
 
 
