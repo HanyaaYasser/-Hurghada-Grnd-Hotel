@@ -1,0 +1,185 @@
+<html>
+
+<div class="card">
+  <button> <a href= "rooms2.html"> Book </a></span> </button>
+    <div class="container">
+      <h6> <a href="room-details.html"> 150$ / Night</a></h6>   
+      <h5><a href="room-details.html">Junior Suite</a> </h5>
+       <div class="line"></div>
+    </div>
+  </div>
+
+  <?php
+
+include "TopMenu.php";
+include "db.php";
+?>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="full-page">
+<link rel="stylesheet" type="text/css" href="menustyle.css">
+
+                  <a href="Beef.php" class="MenuVar beef"> Beef </a>                 
+                  <a href="chicken.php" class="MenuVar Chicken">   Chicken    </a>           
+                  <a href="Burgers.php" class="MenuVar Burgers">   Burgers   </a>                          
+                  <a href="Salads.php" class="MenuVar Salads">   Salads   </a>                 
+                  <a href="Dessert.php" class="MenuVar Dessert">   Dessert   </a>                     
+                  <a href="Classics.php" class="MenuVar Classics">   Classics </a>                  
+                  <a href="Classics.php" class="MenuVar Mindsandwitch">   Mind Sandwitch </a>
+                  
+                  <form class="example" action=" "> <!-- php el search --> 
+                  <input type="text" placeholder="Search your plate..." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+
+                <!-- MEAT --> 
+                <h10><b>Beef 🥩</b></h10>                  
+                <!-- MEAT --> 
+<?php
+ 
+while($row = mysqli_fetch_array($result) ) 
+{
+ if ($row['parent_menu']=='Beef'){
+
+?>
+    <form>  
+        <div class="row"> 
+           <div class="column">
+                <div class="box ">                               
+                <div class="imgBx">         
+                <img src='<?=$row['image'];?>'> </img >    
+<?php
+for($i=0;$i< $row['Rating'];$i++)
+{
+?>
+                    <span class="fa fa-star checked"></span>   
+  <?php
+}
+  ?>
+  <?php
+for($i=0;$i< 5-$row['Rating'];$i++)
+{
+?>
+                   <span class="fa fa-star"></span>  
+  <?php
+}
+  ?>
+                   
+                     <div class="content">                               
+                     <h2> <?= $row['name']; ?></h2>
+                     <h3> <?= $row['Price']; ?> </h3>
+                     <p> <?=  $row['description']; ?> </p>                                                    
+                     <div class="s">   <!-- beta3 goz2 el select -->                                 
+                     <form action="menue.php">      <!-- add to cart (tb3 hussein)-->                    
+                     <label for="side">Choose your side: </label>
+                     <select name="side" id="side">
+                     <option value="Pasta">Pasta</option>
+                     <option value="Rice">Rice</option>
+                     </div>
+                     </select>
+                     <br><br>                 
+                     <input class="button"  value="Add to cart" type="submit">
+                     <br> <br> <br> <br><br> <br><br> <br><br> <br>
+                     </div>     
+                     </form>                          
+                     </div>  
+                     </div> 
+</div>  <!-- beta3 goz2 el wrapper -->  
+ </div>
+                     </form> 
+
+<?php
+}
+}
+?>
+</body>
+</html>
+</div>
+</html>
+
+  </html>
+
+  
+
+<style>
+
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 200px;
+    height: 300px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    background-image: url("images/2.jpg");
+    
+}
+
+.category {
+  position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    font-family: 'Barlow Condensed', sans-serif;
+    padding: 10px 3px;
+    line-height: 1.5em;
+}
+ .category a {
+    color: #fff;
+}
+.category:hover {
+    color: #fff;
+}
+
+.container h6  {
+  position: relative;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    display: inline;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+}
+
+.container h6 i {
+  font-size: 6px;
+    margin-right: 2px;
+}
+
+.container h5 {
+  position: relative;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+</style>
+
