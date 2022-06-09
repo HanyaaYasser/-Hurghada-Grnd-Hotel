@@ -9,8 +9,6 @@
         <label for="password">Password</label>
         <input type="password" placeholder="Password" name="Pbox">
 
-        <label for="user_typr">User_Type</label>
-        <input type="text" placeholder="user type" name="Ubox">
   <br>
   <button type="submit"name="Login" >Login</button> 
 
@@ -19,7 +17,7 @@
   <style>
      body{
             
-            background-image: url('view.jpg');
+            background-image: url('5.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%
@@ -99,30 +97,28 @@ if(isset($_POST['Login']))
 {
   $Email=$_POST['Ebox'];
   $Password=$_POST['Pbox'];
-  $User_Type=$_POST['Ubox'];
-  $query="SELECT email,password from info where user_type='$User_Type'";
+  $query="SELECT ID from info where email = '$Email' and password = '$Password'";
   $result=mysqli_query($conn,$query);
   $count=mysqli_num_rows($result);
-    if($User_Type=='receptionist')
-    {
+  if($_SESSION['ID'] = '1')
+  {
         ?>
+		<script>
+		window.location.href="welcome.php";
+    hide.location.href="receptionist.php";
+		</script>
+		<?php
+}
+    elseif($_SESSION['ID'] = '2')
+    {
+    ?>
 		<script>
 		window.location.href="receptionist.php";
+    document.href("welcome.php").style.display = "hidden";
 		</script>
 		<?php
     }
-    elseif($User_Type=='guests')
-    {
-        ?>
-		<script>
-		window.location.href="Rooms.php";
-		</script>
-		<?php
-    }
-  else 
-  {
-    echo "login failed";
-  }
+    
 }
 ?>
 </html>
