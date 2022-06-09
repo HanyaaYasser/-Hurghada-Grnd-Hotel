@@ -1,6 +1,105 @@
 <html>
 <head>
 <style>
+  .header a {
+  float: left;
+  color:#8e6d45;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header .logo {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  color:white;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+
+    float: right;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    align-items: right;
+    padding: 10px ;
+    padding-left: 690px;
+    margin-left:550px;
+
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color:#8e6d45;
+    padding: 16px;
+    font-size: 18px;
+    line-height: 0px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn { color: white; }
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
@@ -83,19 +182,91 @@ left: 100px;;
 </style>
 </head>
 <body>
+<div class="header">
+            
+            <a href="#default" class="logo"> <img src="logo.png" style="width:30%;"></a>
+            <div class="header-right">
+                <a href="welcome.php"> Home </a>
+                <div class="dropdown">
+                    <button class="dropbtn">Rooms & Suits</button>
+                    <div class="dropdown-content">
+                    <a href="page2.html">Rooms 1</a>
+                      <a href="Rooms.php">Rooms 2</a>
+                      <a href="#">Rooms 3</a>
+                    </div>
+                  </div>
+                  <a href="about.html"> About </a>
+                <a href="Restaurant.php"> Restaurant</a>
+                <a href="contact.html"> Contact us </a>
+                <a href="log In.php"> Login</a>
+                
+            </div>
+          </div>
+        </nav>
+ </header>
     <div class="slideshow-container">
 <header>
-<div class="text">Hurghada GRND Hotel</div>
 <div class="mySlides fade">
-  <img src="img1.jpg" style="width:100%">
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT img1 FROM restaurant ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+  <img style="width:100%;"src='<?=$row['img1'];?>'></img>
+  <?php
+    }
+  }
+  ?>
 </div>
 
 <div class="mySlides fade">
-  <img src="img2.jpg" style="width:100%">
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT img2 FROM restaurant ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+  <img style="width:100%;"src='<?=$row['img2'];?>'></img>
+  <?php
+    }
+  }
+  ?>
 </div>
 
 <div class="mySlides fade">
-  <img src="img3.jpg" style="width:100%">
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT img3 FROM restaurant ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+  <img style="width:100%;"src='<?=$row['img3'];?>'></img>
+  <?php
+    }
+  }
+  ?>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -158,259 +329,207 @@ function showSlides(n) {
 </header>
 </body>
 <header>
-<div class="text">Hurghada GRND Hotel</div>
+
 </header>
 <body>
    
-<h3 style="position: absolute;left: 300px; top: 1100px;">⭐⭐⭐⭐⭐</h3>
-<p style="font_family:Bookman Old Style; position: absolute;left: 300px; top: 1150px;">AN EXPERIENCE FOR THE SENSES</p>
-<h1 style="font_family:Times New Roman (Headings CS); position: absolute;left: 300px; top: 1200px;">The Restaurant</h1>
-<p style="position: absolute;right:300px; left: 300px; top: 1300px;">Led by Chef de Micheal Martin, The Restaurant is celebrated for its excellent cuisine and unique ambience. The gorgeous dining room features three open studio kitchens, allowing you to enjoy the sights and sounds of the culinary artistry on display. The menu showcases both Asian and European influences, with a tempting selection of classic favorites and creative dishes for you to sample. Cheese connoisseurs will be drawn to the The Wine and Cheese Cellar, housed in five-meter-high glass walls, where our knowledgeable staff can introduce you to some of Hurghada's greatest culinary treasures.</p>
-<h2 style="font_family:Arabic Typesetting; position: absolute;left: 300px; top: 1450px;">Hours</h2>
-<p  style="position: absolute;left: 300px; top: 1520px;">🕒   Breakfast: 7.00 am – 11.00 am (daily)</p>
-<p  style="position: absolute;left: 300px; top: 1550px;">🕒   Lunch: 12.00 noon – 2.00 pm (daily)</p>
-<p  style="position: absolute;left: 300px; top: 1580px;">🕒   Dinner: open from 6.30 pm, last order at 10.00 pm (daily)</p>
-<h2 style="font_family:Arabic Typesetting; position: absolute;left: 300px; top: 1680px;">Dress Code</h2>
-<p style="position: absolute;right:300px; left: 300px; top: 1750px;">Smart casual (no shorts, hats, or sandals permitted)</p>
-<h2 style="font_family:Arabic Typesetting; position: absolute;left: 300px; top: 1850px;">Terrace</h2>
-<p style="position: absolute;right:300px; left: 300px; top: 1910px;">Open for drinks only</p>
+<h3 style="position: absolute;left: 300px; top: 1200px;">⭐⭐⭐⭐⭐</h3>
+<p style="font_family:Bookman Old Style; position: absolute;left: 300px; top: 1250px;">AN EXPERIENCE FOR THE SENSES</p>
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT restaurant,det1,hours,det2,det22,det23,dress,det3,terrace,det4 FROM restaurant ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+      <h1 style="font_family:Times New Roman (Headings CS); position: absolute;left: 300px; top: 1330px;"><?=$row['restaurant'];?></h1>
+<p style="position: absolute;right:300px; left: 300px; top: 1400px;"><?=$row['det1'];?></p>
+<h2 style="font_family:Arabic Typesetting; position: absolute;left: 300px; top: 1570px;"><?=$row['hours'];?></h2>
+<p  style="position: absolute;left: 300px; top: 1630px;"><?=$row['det2'];?></p>
+<p  style="position: absolute;left: 300px; top: 1660px;"><?=$row['det22'];?></p>
+<p  style="position: absolute;left: 300px; top: 1690px;"><?=$row['det23'];?></p>
+<h2 style="font_family:Arabic Typesetting; position: absolute;left: 300px; top: 1780px;"><?=$row['dress'];?></h2>
+<p style="position: absolute;right:300px; left: 300px; top: 1840px;"><?=$row['det3'];?></p>
+<h2 style="font_family:Arabic Typesetting; position: absolute;left: 300px; top: 1930px;"><?=$row['terrace'];?></h2>
+<p style="position: absolute;right:300px; left: 300px; top: 1990px;"><?=$row['det4'];?></p>
+<?php
+    }
+  }
+  ?>
 <div id="black_background">
-    <h1 style="position: absolute; top:2250px; left:40%; color:white;">Restaurant Menu</h1>
-    <div class="starter" id="starter">
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;">Mozzarella  Dippers</h3>
-    <p style="position: absolute; color:white;left:39%;top:2605px;">60 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2640px;">Fried mozzarella sticks, marinara sauce</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;">Onion Rings</h3>
-    <p style="position: absolute; color:white;left:39%;top:2760px;">90 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2800px;">Fried onion rings, smoked aioli</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;">Fried Jalapeno</h3>
-    <p style="position: absolute; color:white;left:38.6%;top:2920px;">130 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2960px;">Fried jalapeno pickles, cheddar sauce</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;">Buffalo Wings</h3>
-    <p  style="position: absolute; color:white;left:79.6%;top:2605px;">120 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2640px;">Spicy chicken wings, blue cheese sauce, carrot, celery</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;">Chilli Con Carne</h3>
-    <p style="position: absolute; color:white;left:79%;top:2760px;">85 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2800px;">Spicy ground beef, bacon, kidney beans</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;">Potato Skins</h3>
-    <p style="position: absolute; color:white;left:78.6%;top:2920px;">120 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2960px;">Crispy potato skins; bacon & cheddar or vegetables</p>
-</div>
+    <h1 style="position: absolute; top:2350px; left:40%; color:white;">Restaurant Menu</h1>
+   
 <div class="mains" id="main">
-<h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;">Rusty’s Burger</h3>
-    <p style="position: absolute; color:white;left:39%;top:2605px;">60 EGP</p>
+  <?php
+$servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT m1,p1,d1,m2,p2,d2,m3,p3,d3,m4,p4,d4,m5,p5,d5,m6,p6,d6 FROM mains ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+<h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;"><?=$row['m1'];?></h3>
+    <p style="position: absolute; color:white;left:39%;top:2605px;"><?=$row['p2'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p  style="position: absolute; color:white; left:20%;top:2640px;">Smoked pulled beef ribs, bbq sauce, cheddar, crispy onion</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;">Cajun Fish Steak</h3>
-    <p  style="position: absolute; color:white;left:39%;top:2760px;">90 EGP</p>
+    <p  style="position: absolute; color:white; left:20%;top:2640px;"><?=$row['d1'];?></p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;"><?=$row['m2'];?></h3>
+    <p  style="position: absolute; color:white;left:39%;top:2760px;"><?=$row['p2'];?></p>
     <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p  style="position: absolute; color:white; left:20%;top:2800px;">Cajun spicied seabass, deep fried baby potatoes, side salad</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;">Southern Fried Chicken</h3>
-    <p  style="position: absolute; color:white;left:38.6%;top:2920px;">130 EGP</p>
+    <p  style="position: absolute; color:white; left:20%;top:2800px;"><?=$row['d2'];?></p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;"><?=$row['m3'];?></h3>
+    <p  style="position: absolute; color:white;left:38.6%;top:2920px;"><?=$row['p3'];?></p>
     <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p  style="position: absolute; color:white; left:20%;top:2960px;">Cajun coated chicken breast, fries and honey mustard</p>
-    <h3  style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;">Crab Cake</h3>
-    <p  style="position: absolute; color:white;left:79.6%;top:2605px;">120 EGP</p>
+    <p  style="position: absolute; color:white; left:20%;top:2960px;"><?=$row['d3'];?></p>
+    <h3  style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;"><?=$row['m4'];?></h3>
+    <p  style="position: absolute; color:white;left:79.6%;top:2605px;"><?=$row['p4'];?></p>
     <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p  style="position: absolute; color:white; left:60%;top:2640px;">Breaded crab cakes, tartar sauce, apple and fennel salad</p>
-    <h3  style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;">Baby Back Ribs</h3>
-    <p style="position: absolute; color:white;left:79%;top:2760px;">85 EGP</p>
+    <p  style="position: absolute; color:white; left:60%;top:2640px;"><?=$row['d4'];?></p>
+    <h3  style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;"><?=$row['m5'];?></h3>
+    <p style="position: absolute; color:white;left:79%;top:2760px;"><?=$row['p5'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2800px;">Bbq glazed baby pork ribs, coleslaw, fries</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;">Smokehouse Combo</h3>
-    <p style="position: absolute; color:white;left:78.6%;top:2920px;">120 EGP</p>
+    <p style="position: absolute; color:white; left:60%;top:2800px;"><?=$row['d5'];?>s</p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;"><?=$row['m6'];?></h3>
+    <p style="position: absolute; color:white;left:78.6%;top:2920px;"><?=$row['p6'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2960px;">Smoked beef brisket, rib and sausage, coleslaw, cornbread</p>
+    <p style="position: absolute; color:white; left:60%;top:2960px;"><?=$row['d6'];?></p>
+    <?php
+    }
+  }
+  ?>
 </div>
-<div class="salad" id="salad">
-<h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;">Ceaser Salad</h3>
-    <p style="position: absolute; color:white;left:39%;top:2605px;">140 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2640px;">Romaine lettuce, croutons, parmigiano, Ceaser dressing.</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;">Waldorf Salad</h3>
-    <p style="position: absolute; color:white;left:39%;top:2760px;">180 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2800px;">Lettuce, celery, apple, grape, walnut, waldorf sauce</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;">Quinoa & Avocado Salad</h3>
-    <p style="position: absolute; color:white;left:38.6%;top:2920px;">180 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2960px;">Quinoa, avocado, mixed greens. Nuts, dried and fresh fruits</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;">Grilled Salmon Salad</h3>
-    <p style="position: absolute; color:white;left:79.6%;top:2605px;">120 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2640px;">Grilled salmon, mixed greens, capers, orange slices</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;">Chicken Cobb Salad</h3>
-    <p style="position: absolute; color:white;left:79%;top:2760px;">85 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2800px;">Iceberg lettuce, cherry tomatoes, blue cheese, avocado, bacon</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;">Salad Chicken</h3>
-    <p style="position: absolute; color:white;left:78.6%;top:2920px;">150 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2960px;">Ceaser dressing. Optional grilled chicken breas</p>
-</div>
-<div class="wine" id="wine">
-<h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;">Château d'Yquem 2011</h3>
-    <p style="position: absolute; color:white;left:39%;top:2605px;">900 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2640px;">Dessert Wine, Bordeaux, Graves, Sauternes</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;">Alvear Cream NV</h3>
-    <p style="position: absolute; color:white;left:39%;top:2760px;">180 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2800px;">Dessert, Fortified Wine, Andalucia</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;">Chateau D'yquem 1990</h3>
-    <p style="position: absolute; color:white;left:38.6%;top:2920px;">1600 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2960px;">Dessert Wine, Bordeaux, Graves, Sauternes</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;">La Grande Année 2007</h3>
-    <p style="position: absolute; color:white;left:79.6%;top:2605px;">900 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2640px;">Rosé, Champagne</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;">Sine Qua Non 2012</h3>
-    <p style="position: absolute; color:white;left:79%;top:2760px;">1100 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2800px;">Syrah, Shiraz & Blends, California</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;">W.S. Keyes Winery 2006</h3>
-    <p style="position: absolute; color:white;left:78.6%;top:2920px;">600 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2960px;">Merlot, California, Napa, Howell Mountain</p>
-</div>
+
+
 <div class="breakfast" id="breakfast">
-<h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;">Egg Benedict</h3>
-    <p style="position: absolute; color:white;left:39%;top:2605px;">130 EGP</p>
+<?php
+$servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT m1,p1,d1,m2,p2,d2,m3,p3,d3,m4,p4,d4,m5,p5,d5,m6,p6,d6 FROM breakfast ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+<h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;"><?=$row['m1'];?></h3>
+    <p style="position: absolute; color:white;left:39%;top:2605px;"><?=$row['p2'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2640px;">English muffin, beef, hollandaise sauce, poached egg.</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;">Texas Benedict</h3>
-    <p style="position: absolute; color:white;left:39%;top:2760px;">80 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2800px;">English muffin, short ribs, bbq sauce, poached egg.</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;">Rusty’s Omlette</h3>
-    <p style="position: absolute; color:white;left:38.6%;top:2920px;">80 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2960px;">Mozzarella, cheddar, caramelized onion, black beans</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;">Salmon Bagel</h3>
-    <p style="position: absolute; color:white;left:79.6%;top:2605px;">90 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2640px;">Smoked salmon, cream cheese, dill, rocket, red onion</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;">Breakfast Bagel</h3>
-    <p style="position: absolute; color:white;left:79%;top:2760px;">90 EGP</p>
+    <p  style="position: absolute; color:white; left:20%;top:2640px;"><?=$row['d1'];?></p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;"><?=$row['m2'];?></h3>
+    <p  style="position: absolute; color:white;left:39%;top:2760px;"><?=$row['p2'];?></p>
+    <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+    <p  style="position: absolute; color:white; left:20%;top:2800px;"><?=$row['d2'];?></p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;"><?=$row['m3'];?></h3>
+    <p  style="position: absolute; color:white;left:38.6%;top:2920px;"><?=$row['p3'];?></p>
+    <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+    <p  style="position: absolute; color:white; left:20%;top:2960px;"><?=$row['d3'];?></p>
+    <h3  style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;"><?=$row['m4'];?></h3>
+    <p  style="position: absolute; color:white;left:79.6%;top:2605px;"><?=$row['p4'];?></p>
+    <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+    <p  style="position: absolute; color:white; left:60%;top:2640px;"><?=$row['d4'];?></p>
+    <h3  style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;"><?=$row['m5'];?></h3>
+    <p style="position: absolute; color:white;left:79%;top:2760px;"><?=$row['p5'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2800px;">Chocolate, marshmallow, biscuit bar</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;">Rusty’s Pancake</h3>
-    <p style="position: absolute; color:white;left:78.6%;top:2920px;">120 EGP</p>
+    <p style="position: absolute; color:white; left:60%;top:2800px;"><?=$row['d5'];?>s</p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;"><?=$row['m6'];?></h3>
+    <p style="position: absolute; color:white;left:78.6%;top:2920px;"><?=$row['p6'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2960px;">Strawberry, white chocolate, dark chocolate, crispearls</p>
+    <p style="position: absolute; color:white; left:60%;top:2960px;"><?=$row['d6'];?></p>
+    <?php
+    }
+  }
+  ?>
 </div>
 <div class="dessert" id="dessert">
-<h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;">Bourbon Pecan Pie</h3>
-    <p style="position: absolute; color:white;left:39%;top:2605px;">160 EGP</p>
+<?php
+$servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT m1,p1,d1,m2,p2,d2,m3,p3,d3,m4,p4,d4,m5,p5,d5,m6,p6,d6 FROM dessert ";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+<h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2600px;"><?=$row['m1'];?></h3>
+    <p style="position: absolute; color:white;left:39%;top:2605px;"><?=$row['p2'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2640px;">Bourbon pecan stuffed pie, vanilla ice-cream</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;">New York Cheesecake</h3>
-    <p style="position: absolute; color:white;left:39%;top:2760px;">120 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2800px;">Cheesecake, strawberry & lime salad</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;">Rusty’s ice-cream</h3>
-    <p style="position: absolute; color:white;left:38.6%;top:2920px;">80 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:20%;top:2960px;">Vanilla, bourbon, cookie, chocolate ice-cream</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;">S’mores</h3>
-    <p style="position: absolute; color:white;left:79.6%;top:2605px;">120 EGP</p>
-    <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2640px;">Chocolate chip cookies, marshmallow, chocolate</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;">Rocky Road</h3>
-    <p style="position: absolute; color:white;left:79%;top:2760px;">90 EGP</p>
+    <p  style="position: absolute; color:white; left:20%;top:2640px;"><?=$row['d1'];?></p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2760px;"><?=$row['m2'];?></h3>
+    <p  style="position: absolute; color:white;left:39%;top:2760px;"><?=$row['p2'];?></p>
+    <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+    <p  style="position: absolute; color:white; left:20%;top:2800px;"><?=$row['d2'];?></p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2920px;"><?=$row['m3'];?></h3>
+    <p  style="position: absolute; color:white;left:38.6%;top:2920px;"><?=$row['p3'];?></p>
+    <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:20%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+    <p  style="position: absolute; color:white; left:20%;top:2960px;"><?=$row['d3'];?></p>
+    <h3  style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2600px;"><?=$row['m4'];?></h3>
+    <p  style="position: absolute; color:white;left:79.6%;top:2605px;"><?=$row['p4'];?></p>
+    <p  style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2625px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+    <p  style="position: absolute; color:white; left:60%;top:2640px;"><?=$row['d4'];?></p>
+    <h3  style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2760px;"><?=$row['m5'];?></h3>
+    <p style="position: absolute; color:white;left:79%;top:2760px;"><?=$row['p5'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2785px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2800px;">Chocolate, marshmallow, biscuit bar</p>
-    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;">Apple & Pear Crumble</h3>
-    <p style="position: absolute; color:white;left:78.6%;top:2920px;">130 EGP</p>
+    <p style="position: absolute; color:white; left:60%;top:2800px;"><?=$row['d5'];?>s</p>
+    <h3 style="position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2920px;"><?=$row['m6'];?></h3>
+    <p style="position: absolute; color:white;left:78.6%;top:2920px;"><?=$row['p6'];?></p>
     <p style=" position: absolute; color:#645215;font-family: Perpetua Titling MT; left:60%;top:2945px;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
-    <p style="position: absolute; color:white; left:60%;top:2960px;">Caramelized pear and apple, oat crumble, vanilla ice-cream</p>
+    <p style="position: absolute; color:white; left:60%;top:2960px;"><?=$row['d6'];?></p>
+    <?php
+    }
+  }
+  ?>
 </div>
     <div class="btn-group">
-<button class="button" type="submit"  onclick="starters()" style=" position:absolute;background:#242526;border-color:#645215;border-width: thick;font-family: Perpetua Titling MT;width:160;height:50px; color:white;margin-top:-280px; margin-left:-250px;cursor: pointer;display: inline-block;">Starters</button>
 
 <button class="button" type="submit"  onclick="mains()" style="position:absolute;background:#242526;border-color:#645215;border-width: thick;font-family: Perpetua Titling MT;width:160;height:50px; color:white; margin-top:-280px; margin-left:-25px;cursor: pointer;display: inline-block;">Mains</button> 
 
-<button class="button" type="submit" onclick="salads()" style="position:absolute;background:#242526;border-color:#645215;border-width: thick;font-family: Perpetua Titling MT;width:160;height:50px; color:white; margin-top:-280px; margin-left:200px;cursor: pointer;display: inline-block;">Salads</button> 
+<button class="button" type="submit" onclick="breakfast()" style="position:absolute;background:#242526;border-color:#645215;border-width: thick;font-family: Perpetua Titling MT;width:160;height:50px; color:white; margin-top:-280px; margin-left:300px;cursor: pointer;display: inline-block;">Breakfast</button>
 
-<button class="button" type="submit" onclick="wine()"style="position:absolute;background:#242526;border-color:#645215;border-width: thick;font-family: Perpetua Titling MT;width:160;height:50px; color:white; margin-top:-280px; margin-left:420px;cursor: pointer;display: inline-block;">Wine</button>
-
-<button class="button" type="submit" onclick="breakfast()" style="position:absolute;background:#242526;border-color:#645215;border-width: thick;font-family: Perpetua Titling MT;width:160;height:50px; color:white; margin-top:-280px; margin-left:640px;cursor: pointer;display: inline-block;">Breakfast</button>
-
-<button class="button" type="submit" onclick="dessert()" style="position:absolute;background:#242526;border-color:#645215;border-width: thick;font-family: Perpetua Titling MT;width:160;height:50px; color:white; margin-top:-280px; margin-left:860px;cursor: pointer;display: inline-block;">Dessert</button>
+<button class="button" type="submit" onclick="dessert()" style="position:absolute;background:#242526;border-color:#645215;border-width: thick;font-family: Perpetua Titling MT;width:160;height:50px; color:white; margin-top:-280px; margin-left:640px;cursor: pointer;display: inline-block;">Dessert</button>
 </div>
    
 </div>
 <script>
-  document.getElementById("main").style.visibility = "hidden"
   document.getElementById("dessert").style.visibility = "hidden"
-  document.getElementById("wine").style.visibility = "hidden" 
   document.getElementById("breakfast").style.visibility = "hidden"
-  document.getElementById("salad").style.visibility = "hidden"
-  document.getElementById("starter").style.visibility = "visible"
+  document.getElementById("main").style.visibility = "visible"
 </script>
-<script>
-  function starters() {
-    document.getElementById("wine").style.visibility = "hidden" 
-    document.getElementById("dessert").style.visibility = "hidden"
-  document.getElementById("breakfast").style.visibility = "hidden"
-  document.getElementById("main").style.visibility = "hidden"
-  document.getElementById("salad").style.visibility = "hidden"
-  document.getElementById("starter").style.visibility = "visible";
-  }
-</script>
+
 <script>
  function mains() {
-  document.getElementById("wine").style.visibility = "hidden" 
   document.getElementById("dessert").style.visibility = "hidden"
   document.getElementById("breakfast").style.visibility = "hidden"
-  document.getElementById("starter").style.visibility = "hidden"
-  document.getElementById("salad").style.visibility = "hidden"
   document.getElementById("main").style.visibility = "visible";
 }
 </script>
-<script>
-function salads() {
-  document.getElementById("wine").style.visibility = "hidden" 
-  document.getElementById("dessert").style.visibility = "hidden"
-  document.getElementById("breakfast").style.visibility = "hidden"
-  document.getElementById("starter").style.visibility = "hidden"
-  document.getElementById("main").style.visibility = "hidden"
-  document.getElementById("salad").style.visibility = "visible";
-}
-</script>
-<script>
-function wine() {
-  document.getElementById("salad").style.visibility = "hidden" 
-  document.getElementById("dessert").style.visibility = "hidden"
-  document.getElementById("breakfast").style.visibility = "hidden"
-  document.getElementById("starter").style.visibility = "hidden"
-  document.getElementById("main").style.visibility = "hidden"
-  document.getElementById("wine").style.visibility = "visible";
-}
-</script>
+
 <script>
 function breakfast() {
-  document.getElementById("salad").style.visibility = "hidden" 
   document.getElementById("dessert").style.visibility = "hidden"
-  document.getElementById("wine").style.visibility = "hidden"
-  document.getElementById("starter").style.visibility = "hidden"
   document.getElementById("main").style.visibility = "hidden"
   document.getElementById("breakfast").style.visibility = "visible";
 }
 </script>
 <script>
 function dessert() {
-  document.getElementById("salad").style.visibility = "hidden" 
   document.getElementById("breakfast").style.visibility = "hidden"
-  document.getElementById("wine").style.visibility = "hidden"
-  document.getElementById("starter").style.visibility = "hidden"
   document.getElementById("main").style.visibility = "hidden"
   document.getElementById("dessert").style.visibility = "visible";
 }
@@ -422,5 +541,6 @@ function dessert() {
   margin-top:1100px;
   background-attachment: absolute;
 }
+</style>
 </body>
 </html>
