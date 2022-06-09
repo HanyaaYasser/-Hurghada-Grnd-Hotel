@@ -15,7 +15,7 @@
 	   margin: 0;
 	   padding: 0;
 	   font-style: sans-serif;
-	   background-image: url('pool2.jpg');
+	   background-image: url('bgjpeg.jpg');
 	   background-size: cover;
 	   background-position: center;
 	   background-repeat: no-repeat;
