@@ -65,25 +65,7 @@
 
     </section>
 
-
-
-    <!--second page after the welcome-->
-    <!-- <section class="next" id="Hurghada GRND Hotel">
-        <h3 class="title"> Hurghada GRND Hotel</h3>
-            <h1 class="title2"> Enjoy A Luxury Experience </h1>
-            <div class="content"> 
-                <div class="parag"> <!-- paragrapgh-->
-                    <!-- <h4> Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat. Donec in quis the pellentesque velit. Donec id velit ac arcu posuere blane.</h4>
-                </div>
-                <div class="pics">  <!--pictures-->
-                    <!-- <img src=" images/1.jpg" class="1st">
-                    <img src="images/rest.jpg" class="2nd">
-                </div>
-            </div>
-    </section>  -->
-
-
-<!--second page after the welcome-->
+<!-----------About---------->
     <section class="about section-padding">
         <div class="container2">
             <div class="row">
@@ -114,55 +96,7 @@
         </div>
     </section>
 
-
-
-
-        <!--third page after the welcome: rooms -->
-
-        <!-- <section class="rooms">
-            <h1 class="title2"> Rooms & Suites</h1>
-            <div class="content2">    <!--cards el rooms-->
-                <!-- <div class="cards">  
-                     <span class="category"><a href="rooms2.html"> Book</a></span> <!-- button haywady ala page el rooms beta3t martina-->
-                     <!-- <div class="info">
-                        <h3> 150$ / NIGHT</h3>
-                        <h2> Junior suite </h2>
-                        <div class="line"></div>
-                        <div class="facilities">
-                            <div class="col col-md-7">
-                            <ul> -->
-                                <!-- <li><i class="flaticon-bed"></i></li>
-                                <li><i class="flaticon-bath"></i></li>
-                                <li><i class="flaticon-breakfast"></i></li>
-                                <li><i class="flaticon-towel"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                         
-                     </div>
-                    </div>
-                    <div class="cards">
-                        <div class="info2">
-                            <h3> 200$ / NIGHT</h3>
-                            <h2> Family Room </h2>
-                        </div>
-                       </div>
-                       <div class="cards">
-                        <div class="info">
-                            <h3> 250$ / NIGHT</h3>
-                            <h2> Double Room </h2>
-                        </div>
-                       </div>
-                       <div class="cards">
-                        <div class="info">
-                            <h3> 300$ / NIGHT</h3>
-                            <h2> Deluxe Room </h2>
-                        </div>
-                       </div>
-            </div>
-        </section> --> 
-
-
+     <!----------Rooms---------->
 <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
         <div class="container">
             <div class="row">
@@ -189,8 +123,6 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="position-re o-hidden" > <img style="width: 300px; height:350px;" src='<?=$row['img4'];?>'></img></div>
-                        <!-- <span class="category"> <a href= "Rooms.php"> Book </a></span>  booking page -->
-
                         <?php
         }
       }
@@ -210,11 +142,11 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
       ?>
-                            <h6> <a href="Rooms.php"><?= $row['price']; ?></a></h6>   <!--martina-->
+                            <h6> <a href="Rooms.php"><?= $row['price']; ?></a></h6>   
                             <h5><a href="Rooms.php"><?=$row['room_type']; ?></a> </h5>
                             <div class="line"></div>
                                 <div class="col col-md-5 text-right">
-                                    <div class="permalink"> <a href="Rooms.php "> Details </div> <!--martina-->
+                                    <div class="permalink"> <a href="Rooms.php "> Details </div> 
     </div>
                         </div>
                     </div>
@@ -239,7 +171,6 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="position-re o-hidden"> <img style="width: 300px; height:350px;" src='<?=$row['img5'];?>'></img></div>
-                        <!-- <span class="category"> <a href= "Rooms.php"> Book </a></span>  booking page -->
                         <?php
         }
       }
@@ -258,11 +189,11 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="con">
-                            <h6> <a href=" Rooms.php"><?= $row['price']; ?></a></h6>   <!--martina-->
+                            <h6> <a href=" Rooms.php"><?= $row['price']; ?></a></h6>   
                             <h5><a href="Rooms.php"><?=$row['room_type']; ?></a> </h5>
                             <div class="line"></div>
                                 <div class="col col-md-5 text-right">
-                                    <div class="permalink"> <a href="Rooms.php "> Details </div> <!--martina-->
+                                    <div class="permalink"> <a href="Rooms.php "> Details </div> 
                             </div>
                         </div>
                     </div>
@@ -287,7 +218,6 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="position-re o-hidden"><img style="width: 300px; height:350px;" src='<?=$row['img6'];?>'></img></div>
-                        <!-- <span class="category"><a href="Rooms.php">Book</a></span> -->
                         <?php
         }
       }
@@ -336,7 +266,6 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       ?>
                         <div class="position-re o-hidden"> <img style="width: 300px; height:350px;" src='<?=$row['img7'];?>'></img></div>
-                        <!-- <span class="category"><a href="Rooms.php">Book</a></span> -->
                         <?php
         }
       }
@@ -376,9 +305,7 @@ if ($result->num_rows > 0) {
 
 
 
-
-
-<!--footer-->
+<!------------Footer----------->
 <footer class="footer">
     <div class="box-container">
         <div class="box">
@@ -433,32 +360,5 @@ if ($result->num_rows > 0) {
         </div>
     
 </footer>
-
-
-
-
-
-
 </body>
-
 </html>
- <style>
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 20%;
-    height: 30%;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container {
-    padding: 2px 16px;
-  }
-
-</style>
