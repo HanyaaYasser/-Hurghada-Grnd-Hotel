@@ -1,7 +1,7 @@
-/*about*/
-
+/*rooms*/
+html,
 body {
-    font-smooth: antialiased;
+    font-smoothing: antialiased;
 }
 * {
     margin: 0;
@@ -79,11 +79,12 @@ div {
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 991px){
+/* 
+@media screen and (max-width: 991px)
 .bg-fixed {
     background-attachment: scroll !important;
-}
-}
+} */
+
 .section-padding {
     padding: 120px 0;
    
@@ -143,9 +144,9 @@ div {
     color: #fff;
 }
 
-.col-md-4 {
+.col-md-4 {    /*each card*/
     position: relative;
-    width: 100%;
+    width: 300px;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
@@ -172,34 +173,6 @@ div {
 .o-hidden {
     overflow: hidden;
 }
-
-.rooms1 .item .category {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 3;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    text-orientation: mixed;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.5);
-    font-family: 'Barlow Condensed', sans-serif;
-    padding: 10px 3px;
-    line-height: 1.5em;
-}
-
-.rooms1 .item .category a {
-    color: #fff;
-}
-.rooms1 .item .category:hover {
-    color: #fff;
-}
-
 
 
 .rooms1 .item .con  {
@@ -332,12 +305,10 @@ color: #aa8453;
 
 /*shakl el cards*/
  .row .col-md-4 { 
-  
     display: flex;
     justify-content:center;
     flex-direction: row; /* ayezhom gamb baad msh taht baad*/
     flex-wrap: wrap; /*size el cards tefdal zay maheya law mfesh space wkda*/
-
 }
 
 /*---------Footer-------*/
@@ -407,8 +378,4 @@ li {
     justify-content: center;
     overflow: hidden;
 }
-
-
-
-
 
