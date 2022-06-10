@@ -1,11 +1,10 @@
+
 <html>
-    <form action="Rooms.php" method="post"></form>
+    <form action="" method="post"></form>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="scrollIt.js" type="text/javascript"></script>
 
                 <body>
     <div class="slideshow-container">
@@ -15,20 +14,19 @@
             
             <a href="#default" class="logo"> <img src="logo.png" style="width:30%;"></a>
             <div class="header-right">
-                <a href="home"> Home </a>
+                <a href="welcome.php"> Home </a>
                 <div class="dropdown">
                     <button class="dropbtn">Rooms & Suits</button>
                     <div class="dropdown-content">
-                      <a href="#">Junior Suite</a>
-                      <a href="#">Family Room</a>
-                      <a href="#">Double Room</a>
-                      <a href="#">Deluxe Room</a>
+                    <a href="page2.html">Rooms 1</a>
+                      <a href="Rooms.php">Rooms 2</a>
+                      <a href="#">Rooms 3</a>
                     </div>
                   </div>
-                <a href="about"> About </a>
-                <a href="restaurant"> Restaurant</a>
-                <a href="contact"> Contact us </a>
-                <a href="login"> Login</a>
+                  <a href="about.html"> About </a>
+                <a href="Restaurant.php"> Restaurant</a>
+                <a href="contact.html"> Contact us </a>
+                <a href="log In.php"> Login</a>
                 
             </div>
           </div>
@@ -196,14 +194,11 @@ if ($result->num_rows > 0) {
         }
       }
           ?>
-      <div class="butn-dark1"> <a href="#" data-scroll-nav="1" id="button1"><span>Book Now</span></a> </div>
-      <div class="butn-dark2"> <a href="#" data-scroll-nav="1" id="button1"><span>Book Now</span></a> </div>
-      <div class="butn-dark3"> <a href="#" data-scroll-nav="1" id="button1"><span>Book Now</span></a> </div>
-      <div class="butn-dark4"> <a href="#" data-scroll-nav="1" id="button1"><span>Book Now</span></a> </div>
-
-  <script>
- (function(a){var b={upKey:38,downKey:40,easing:"linear",scrollTime:600,activeClass:"active",onPageChange:null};a.scrollIt=function(d){var e=a.extend(b,d);var g=0;var i=a("[data-scroll-index]:last").attr("data-scroll-index");var c=function(j){if(j<0||j>i){return}var k=a("[data-scroll-index="+j+"]").offset().top;a("html,body").animate({scrollTop:k,easing:e.easing},e.scrollTime)};var f=function(j){if(e.onPageChange&&j&&(g!=j)){e.onPageChange(j)}g=j;a("[data-scroll-nav]").removeClass(e.activeClass);a("[data-scroll-nav="+j+"]").addClass(e.activeClass)};var h=function(){var j=a(window).scrollTop();var l=a("[data-scroll-index]").filter(function(m,n){return j>=a(n).offset().top&&j<a(n).offset().top+a(n).outerHeight()});var k=l.first().attr("data-scroll-index");f(k)};a(window).scroll(h).scroll();a(window).keydown(function(j){var k=j.which;if(k==e.upKey&&g>0){c(parseInt(g)-1);return false}else{if(k==e.downKey&&g<i){c(parseInt(g)+1);return false}}return true});a("[data-scroll-nav], [data-scroll-goto]").click(function(j){var k=a(j.target).attr("data-scroll-nav")||a(j.target).attr("data-scroll-goto");c(k)})}}(jQuery));
-  </script>
+      <div class="butn-dark1"> <a href="Book Now .php"><span>Book Now</span></a> </div>
+      <div class="butn-dark2"> <a href="Book Now .php"><span>Book Now</span></a> </div>
+      <div class="butn-dark3"> <a href="Book Now .php"><span>Book Now</span></a> </div>
+      <div class="butn-dark4"> <a href="Book Now .php"><span>Book Now</span></a> </div>
+ 
       <div class="flip-box">
   <div class="flip-box-inner">
     <div class="flip-box-front">
@@ -472,75 +467,6 @@ if ($result->num_rows != 0) {
         </div>
 </div>
 </body>
-<header>
-<div id="creamy_background" data-scroll-index="1">
-  <h4 style="font-size: 15px;font-family: 'Barlow Condensed', sans-serif;font-weight: 400;color: #666;text-transform: uppercase;position: relative; letter-spacing: 6px;margin-left:15px; margin-top:-90px;"> availability</h4>
-  <h1 style="font-size: 60px;font-family: 'Gilda Display', serif;font-weight: 400;color: #222;margin-left:10px; margin-top:-20px;">Search Rooms</h1>
-  <div class="container">
-  <div class="booking-inner clearfix">
-  <form class="form1 clearfix">
-<div class="col1 c1"style="border-color: #aa8453;">
-<div class="input1_wrapper">
-<div class="input1_inner">
- <input type="text" class="form-control input datepicker" placeholder="Check in">
- </div>
-</div>
-</div>
-<div class="col2 c2"style="border-color: #aa8453;">
-<div class="input1_wrapper">
-<div class="input1_inner">
- <input type="text" class="form-control input datepicker" placeholder="Check out">
- </div>
-</div>
-</div>
-<div class="col3 c3">
-<div class="select1_wrapper">
-<div class="select1_inner">
-<select class="select2 select" style="border:none;border-bottom: 7px solid #aa8453;width: 15%; height:8%;margin-top:-90px;margin-left:580px;">
-<option value="1"> Adults</option>
-<option value="1">1 Adult</option>
-<option value="2">2 Adults</option>
-<option value="3">3 Adults</option>
-<option value="4">4 Adults</option>
-</select>
-</div>
-</div>
-</div>
-<div class="col4 c4">
-<div class="select1_wrapper">
-<div class="select1_inner">
-<select class="select2 select" style="border:none;border-bottom: 7px solid #aa8453;width: 15%; height:8%;margin-top:-90px;margin-left:840px;">
-<option value="1"> Children</option>
-<option value="1">1 Children</option>
-<option value="2">2 Children</option>
-<option value="3">3 Children</option>
-<option value="4">4 Children</option>
-</select>
-</div>
-</div>
-</div>
-<div class="col5 c5">
-<div class="select1_wrapper">
-<div class="select1_inner">
-<select class="select2 select" style="border:none;border-bottom: 7px solid #aa8453;width: 15%; height:8%;margin-top:-92px;margin-left:1100px;">
-<option value="1"> Rooms</option>
-<option value="1">1 Rooms</option>
-<option value="2">2 Rooms</option>
-<option value="3">3 Rooms</option>
-<option value="4">4 Rooms</option>
-</select>
-</div>
-</div>
-</div>
-<div class="col6 c6">
- <button type="submit" class="btn-form1-submit">Check Now</button>
-</div>
-</form>
-</div>
-</div>
-<a name="demo"></a>
-</div>
-</header>
 <style>
 @-webkit-keyframes  {
   0% {
@@ -795,6 +721,7 @@ if ($result->num_rows != 0) {
     padding: 10px ;
     padding-left: 690px;
     margin-left:550px;
+    color:#8e6d45;
 
 }
 
@@ -804,123 +731,66 @@ if ($result->num_rows != 0) {
     float: none;
     display: block;
     text-align: left;
+    color:#8e6d45;
   }
   .header-right {
     float: none;
+   color: #8e6d45;
   }
 }
 
-/* Dropdown Button */
 .dropbtn {
-    background-color: transparent;
-    color:#8e6d45;
-    padding: 16px;
-    font-size: 18px;
-    line-height: 0px;
-    border: none;
-  }
+      background-color: transparent;
+      color:#8e6d45;
+      padding: 5px;
+      font-size: 16px;
+      border: none;
+    }
+    
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+    
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn { color: #8e6d45; }
   
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
   
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
   
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
   
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn { color: white; }
-.booking-wrapper {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    bottom: 5%;
-    z-index: 5;
-}
-.booking2-wrapper {
-    position: relative;
-    margin-bottom: 40px;
-}
-.booking-inner {
-    position: relative;
-    border-radius: 0;
-}
-.form1 {
-    display: block;
-    padding: 0;
-    position: relative;
-    margin-top:50px;
-    margin-left:-40px;
-    background:blur(10px);
-}
-.form1 .col1 {
-  display: block;
-    padding: 0;
-    border-color: #aa8453;
-    margin-top: 60px;
-    margin-left:50px;
-    width: 15%;
-    background: #aa8453;
-    line-height: 62.5px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-
-}
-.form1 .col2 {
-  display: block;
-    padding: 0;
-    border-color: #aa8453;
-    margin-left:320px;
-    margin-top: -77px;
-    width: 15%;
-    background: #aa8453;
-    line-height: 62.5px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-}
-
-
-.form1 .c1 {
-    height: 62.5;
-    margin-bottom: 15px;
-}
-.form1 .c2 {
-    height: 62.5px;
-    margin-bottom: 15px;
-}
-
 .ui-datepicker .ui-datepicker-header {
     background: #aa8453;
     border: #aa8453;
-    color: #fff;
+    color: #8e6d45;
 }
 .ui-datepicker {
     font-size: 15px;
-    color: #222;
+    color: #8e6d45;
     background: #fff;
     z-index: 100 !important;
     border: 1px solid #fff;
@@ -931,7 +801,7 @@ if ($result->num_rows != 0) {
 .ui-widget-header .ui-state-default {
     border: 1px solid #f8f5f0;
     background: #f8f5f0;
-    color: #222;
+    color: #8e6d45;
 }
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
@@ -942,19 +812,19 @@ if ($result->num_rows != 0) {
     border: 1px solid #aa8453;
     background: #aa8453;
     font-weight: normal;
-    color: #fff;
+    color: #8e6d45;
 }
 .ui-datepicker .ui-datepicker-prev:after {
     font-size: 10px;
     content: "\e64a";
     font-family: "themify";
-    color: #fff;
+    color: #8e6d45;
 }
 .ui-datepicker .ui-datepicker-next:before {
     font-size: 10px;
     content: "\e649";
     font-family: "themify";
-    color: #fff;
+    color: #8e6d45;
     float: right;
 }
 .ui-datepicker .ui-datepicker-prev:hover,
@@ -962,229 +832,7 @@ if ($result->num_rows != 0) {
     background: transparent;
     border: 1px solid transparent;
 }
-.btn-form1-submit {
-    display: block;
-    padding: 0;
-    border: none;
-    margin-top: -78px;
-    margin-left: 1355px;
-    background: #aa8453;
-    color: #fff;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    text-decoration: none;
-    line-height: 62.5px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    width: 250px;
-}
-.btn-form1-submit:hover {
-    background: #222;
-}
-.btn-form1-submit:focus {
-    outline: none;
-}
-.btn-form1-submit:after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background: inherit;
-}
-.input1_inner {
-    position: relative;
-    position: relative;
-    height:62.5px;
-}
-.input1_inner:after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 23px;
-    pointer-events: none;
-    content: "\e6b6";
-    font-family: "themify";
-    font-size: 15px;
-    color: #aa8453;
-    line-height: 1;
-}
-.input1_inner input {
-    display: block;
-    width: 100%;
-    font-size: 15px;
-    color: #222;
-    padding: 20px 40px 20px 20px;
-    background: #fff;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-}
-.input1_inner input::placeholder {
-    font-size: 17px;
-    color: #222 !important;
-}
-.input1_inner input:focus {
-    outline: none;
-    box-shadow: none;
-    background: #fff;
-    color: #222 !important;
-}
-.select1_wrapper {
-    margin-bottom: 0;
-}
-.select1_inner {
-    position: relative;
-}
-.select2 {
-    width: 100%;
-    background: #fff;
-    margin-bottom: 15px;
-}
-.select2 *:focus {
-    outline: none !important;
-}
-.select2-container--default .select2-results > .select2-results__options {
-    max-height: 500px;
-}
-.select2-container--default .select2-selection--single {
-    background: none;
-    border-radius: 0;
-    border: none;
-    height: auto;
-}
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-size: 17px;
-    line-height: 1;
-    color: #222;
-}
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    display: none;
-}
-.select2-dropdown {
-    background: none;
-    border-radius: 0;
-    z-index: 100;
-    min-width: 0px;
-    border: none;
-}
-.select2-container--open .select2-dropdown--above {
-    border-bottom: 2px solid #aa8453;
-}
-.select2-container--open .select2-dropdown--below {
-    border-top: 2px solid #aa8453;
-}
-.select2-results__option {
-    padding: 10px 30px;
-    background: #fff;
-    font-size: 15px;
-    line-height: 20px;
-    color: #222;
-    border-top: 1px solid #ececec;
-   
-}
-.select2-results__option:first-child {
-    border-top: none;
-}
-.small .select2-results__option {
-    padding-left: 0;
-}
-.select2-container--default .select2-results__option[aria-selected=true] {
-    background: #aa8453;
-    color: #fff;
-}
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background: #aa8453;
-    color: #fff;
-}
-/* responsive */
-@media (max-width: 1259.98px) {
-    .booking2-wrapper {
-        margin-bottom: 30px;
-    }
-}
-@media (max-width: 991.98px) {
-    .booking2-wrapper {
-        margin-bottom: 40px;
-    }
-    .form1 .col1 {
-        width: 50%;
-        border-bottom: 1px solid #ececec;
-    }
-    .form1 .c2 {
-        border-right: none;
-    }
-    .form1 .col2 {
-        width: 25%;
-    }
-    .form1 .col3 {
-        width: 25%;
-    }
-}
-@media (max-width: 767.98px) {
-    .form1 .col1 {
-        width: 100%;
-        border-right: 0;
-        border-bottom: 1px solid #ececec;
-    }
-    .form1 .col2 {
-        width: 100%;
-        border-right: 0;
-        border-bottom: 1px solid #ececec;
-    }
-    .form1 .col3 {
-        width: 100%;
-        border-right: 0;
-    }
-    .btn-form1-submit:after {
-        background: none;
-    }
-    .booking-wrapper {
-        position: relative;
-        bottom: auto;
-        padding: 30px 0;
-        background: #f8f5f0;
-    }
-}
-/* booking form */
-.booking-box {
-    position: relative;
-    background: #f8f5f0;
-    padding: 60px 45px;
-    margin-bottom: -75px;
-}
-.booking-box .head-box h6 {
-    font-size: 15px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 400;
-    color: #666;
-    text-transform: uppercase;
-    position: relative;
-    letter-spacing: 6px;
-    margin-bottom: 10px;
-}
-.booking-box .head-box h4 {
-    font-size: 27px;
-    font-weight: 400;
-    color: #222;
-    border-bottom: 1px solid #ececec;
-    padding-bottom: 15px;
-}
-.booking-box .head-box h4 span {
-    color: #222;
-}
-@media screen and (max-width: 991px) {
-    .booking-box {
-        margin-bottom: 90px;
-        padding: 35px 20px;
-    }
-}
+
 
           body
           {
@@ -1441,10 +1089,9 @@ img {vertical-align: middle;}
  
     ?>
 </html>
-<html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
-<div class="footer">
+<div class="footer1">
   <div class="sec1">
   <?php
     $servername = "localhost";
@@ -1561,15 +1208,88 @@ if ($result->num_rows > 0) {
 </div>
 </div>
 </div>
-
+ <div class="img-background">
+ <div class="stars" style="margin-left:350px; margin-top:-250px;" > <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked" ></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+    </div>
+    <div class="h5" style=" width: 500px; height:350px; margin-top:50px; margin-left:-110px">
+    <h5 style="color: #fff;font-size: 24px;margin-bottom: 30px; line-height: 40px;">Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.</h5>
+    <div class="reservations mb-30">
+                            <div class="icon color-1"><span class="flaticon-call"></span></div>
+                            <div class="text">
+                                <p class="color-1">Reservation</p> <a class="color-1" href="tel:855-100-4444">855 100 4444</a>
+                            </div>
+                        </div>
+<p style="color:white; margin-left: 10px; font-size:15px;"><i class="ti-check"></i><small>Call us, it's toll-free.</small></p>
+    </div>
+ </div>
 </body>
+</html>
 <style>
-   .footer{
+   .footer1{
   padding: 100px;
   background-color:#222;
-  margin-top:0;
+  margin-top:150px;
   background-attachment: absolute;
    }
+   .img-background {
+  width: 100%;
+  min-height: 70vh;
+  display:flex;
+  align-items: center;
+  background-image: url(All.jpeg);
+  height:0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  
+  
+}
+.checked {
+      color: orange;
+      
+  }
+  .fa-star {
+      /* text-align: center; */
+      margin-bottom: 30px;
+  }
+  .reservations {
+    display: flex;
+    align-items: center;
+}
+.reservations .icon {
+    position: relative;
+    top: 3px;
+}
+
+
+.reservations .text {
+    margin-left: 10px;
+    margin-top:5px;
+    color:#aa8453;
+}
+.reservations .text p {
+    font-size: 20px;
+    margin: 0;
+    
+}
+.reservations .text a {
+    font-size: 15px;
+    margin-left:50px;
+    color: #222;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+}
+.reservations .text a.color-1 {
+    color: #fff;
+    margin-top:5px;
+}
+
+
    .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin-top:-260px;

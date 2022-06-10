@@ -1,4 +1,5 @@
 <html>
+	<div class="fullpage1" id="1">
 	<head>
 		<style>
               body{
@@ -33,27 +34,22 @@
 			<?php
 				if(!empty($_SESSION['ID'])) 
 				{
-					echo "Welcome ".$_SESSION['Name'];
+
 					echo"<a href='rooms_serv.php'>Rooms Service</a>";
-					echo"<a href='receptionist.php'>Receptionist</a>";
-					echo"<a href='Add.php'>Add User</a>";
-					echo"<a href='Delete.php'>'Delete User</a>";
-                    echo"<a href='Update2.php'>Update User</a>";
                     echo"<a href='ViewAll.php'>View All Users</a>";
-                    echo"<a href='Search.php'>Search</a>";
+					echo"<a href='search1.php'>Search</a>";
+					echo"<a href='reservation.php'>Reservation</a>";
 				}
 				else
 				{
-					echo"<a href='receptionist.php'>Receptionist</a>";
 					echo"<a href='rooms_serv.php'>Rooms Service</a>";
-					echo"<a href='Add.php'>Add User</a>";
-					echo"<a href='Delete.php'>Delete User</a>";
-                    echo"<a href='Update2.php'>Update User</a>";
-                    echo"<a href='ViewAll.php'>View All Users</a>";
-                    echo"<a href='Search.php'>Search</a>";
+					echo"<a href='ViewAll.php'>View All Users</a>";
+					echo"<a href='search1.php'>Search</a>";
+					echo"<a href='reservation.php'>Reservation</a>";
 				}
 				?>
 		</div>
 		<br><br>
 	</body>
+			</div>
 </html>

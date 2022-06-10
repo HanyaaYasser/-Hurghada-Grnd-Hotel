@@ -1,24 +1,99 @@
-<html>
+<?php
 
-  <form action="" method="post">
-  <form>
-        <h3>Login Here</h3>
+include "connection.php";
+include "function.php";
 
-        <label for="Email">Email</label>
-        <input type="text" placeholder="Email or Phone" name="Ebox">
+$Email=$password='';
+//errors array
+$errors = array('email'=>'', 'password'=>'');
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    //something was posted
+    $Email=$_POST['email'];
+    $password=$_POST['password'];
+    
 
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" name="Pbox">
+  
+    
+    if(!array_filter($errors))
+    {
+        //read from database
+        $query = "SELECT * FROM info WHERE email = '$Email' limit 1";
 
-        <label for="ID">ID  /  If you are a customer, do not enter the ID</label>
-        <input type="password" placeholder="ID" name="IDbox">
+        $result = mysqli_query($con, $query);
+        
+        if($result)
+        {
+            if(mysqli_num_rows($result) > 0)
+            {
+                $user_data = mysqli_fetch_assoc($result);
+                if($user_data['role']=='client')
+                {
+                    if($user_data['password'] == $password)
+                    {
+                        $_SESSION['user_id'] = $user_data['user_id'];
+                        header("Location:welcome.php");
+                        die;
+                    }
+                }
+                else if($user_data['role']=='receptionist')
+                {
+                    if($user_data['password'] == $password)
+                    {
+                        $_SESSION['user_id'] = $user_data['user_id'];
+                        header("Location: receptionist.php");
+                        die;
+                    }
+                }
+                else if($user_data['role']=='quality control')
+                {
+                if($user_data['password'] == $password)
+                {
+                    $_SESSION['user_id'] = $user_data['user_id'];
+                    header("Location: quality_conrol.php");
+                    die;
+                }
+              }
+            }
+        }
+    }
 
-  <br>
-  <button type="submit"name="Login" >Login</button> 
+    $errors['password'] = "*Wrong Email or password!";
+}
+?>
 
-</form>
-<body>
-  <style>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="CSS/authenticate.css">
+        <!-- links for the font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body class="background">
+        <div class="box">
+
+            <form name="" method="post">
+            <h3>Login Here</h3>
+            <label for="Email">Email</label>
+                <input class="textbox" type="text" name="email" placeholder="Email" value="<?php echo $Email ?>" required><br>
+                <span class="error"><?php echo $errors['email']; ?></span><br>
+
+                <label for="password">Password</label>
+                <input class="textbox" type="password" name="password" placeholder="Password" value="<?php echo $password ?>" required><br>
+                <span class="error"><?php echo $errors['password']; ?></span><br>
+
+                <button type="submit">Login</button>
+
+               <p style="color: white; text-align: center;">Create a <a href="signup.php">new account</a></p>
+
+            </form>
+        </div>
+    </body>
+</html>
+<style>
      body{
             
             background-image: url('5.jpg');
@@ -74,7 +149,7 @@ input{
     color: #e5e5e5;
 }
 button{
-    margin-top: 50px;
+    margin-top: 30px;
     width: 100%;
     background-color: #ffffff;
     color: #080710;
@@ -84,45 +159,15 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+input:required {
+  border-color: #FF0000;
+  border-width: 3px;
+}
+
+.error 
+{
+  color: #FF0000;
+}
   </style>
-</body>
-<?php
-$servername="localhost";
-$username="root";
-$password="";
-$DB="hotel";
-$conn=mysqli_connect($servername,$username,$password,$DB);
-if(!$conn)
-{
-  die("connection failed".mysqli_connect_error());
-}
-
-if(isset($_POST['Login']))
-{
-  $Email=$_POST['Ebox'];
-  $Password=$_POST['Pbox'];
-  $ID=$_POST['IDbox'];
-  $query="SELECT ID,email,password from info where email = '$Email' and password = '$Password'";
-  $result=mysqli_query($conn,$query);
-  $count=mysqli_num_rows($result);
-  if($ID == '2')
-  {
-        ?>
-		<script>
-		window.location.href="receptionist.php";
-		</script>
-		<?php
-}
-elseif($ID == '')
-{
-  ?>
-  <script>
-  window.location.href="welcome.php";
-  
-  </script>
-  <?php
-}
-}
-
-?>
-</html>
