@@ -15,7 +15,7 @@
 	   margin: 0;
 	   padding: 0;
 	   font-style: sans-serif;
-	   background-image: url('bgpic.jpg');
+	   background-image: url('bgpic.jpeg');
 	   background-size: cover;
 	   background-position: center;
 	   background-repeat: no-repeat;
@@ -50,8 +50,11 @@
 		<div class = "signup">
 		<form>
 		<h3>Register Here</h3> </br></br>
+             First Name
 		<input type = "FName" class = "input" placeholder = "first name"></br></br>
+		Last Name		
 		<input type = "LName" class = "input" placeholder = "last name"></br></br>
+		National ID
 		<input type = "NID" class = "input" placeholder = "national id"></br></br>
 		Gender
 		<select id = "gender" name = "gender">
@@ -59,8 +62,10 @@
 			<option value = "1">Female</option>
 		    <option value = "2">Male</option>
 		</select> </br></br>
-		<label for = "birthday">Birthdate: </label>
+		Birthdate: 
+		<label for = "birthday"></label>
 		<input type = "date" id = "birthday" name ="birthday"></br></br>
+		Please insert your picture
 		<input type = "file" id = "myFile" name = "filename"></br></br>
         <input type = "submit" id = "submit">
         </form>	
@@ -68,4 +73,3 @@
 		</div>
 	</body>
 </html>
- 
