@@ -39,8 +39,9 @@ table, th, td {
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
- padding: 0.02px 50px 120px 10px;
- width:25%;
+ padding: 10px 50px 120px 10px;
+ width:35%;
+ height:50%;
   background:blur(20px);
   margin-top:430px;
   margin-left:450px;
@@ -108,74 +109,49 @@ if(!$conn)
 {
   die("connection failed".mysqli_connect_error());
 }
-if(isset($_POST['Add']))
+$sql="SELECT ID FROM info";
+if(isset($_POST['Cancel']))
 {
-    $Add="INSERT INTO rooms (room_num, roomtype, check_in,check_out) VALUES('".$_POST["room-numbox"]."','".$_POST["room-typebox"]."','','')";
-    if($conn->query($Add)===true)
+    $Pin=$_POST['pinbox'];
+    if($Pin="ID")
     {
-        echo 'new record inserted';
-    }
-    else 
-    {
-      echo "Error Adding record: " . $conn->error;
-    }
-}
-if(isset($_POST['Delete']))
-{
-  $roomnum=$_POST['room-numbox'];
-  $roomtype=$_POST['room-typebox'];
-  $DELETE="DELETE FROM rooms WHERE room_num='$roomnum'";
+    $Email=$_POST['Ebox'];
+  $DELETE="DELETE FROM reservation WHERE email='$Email'";
+  
   if($conn->query($DELETE)===true)
   {
-  echo "Record deleted successfully";
+  echo "Record canceled successfully";
 } 
 else
  {
-  echo "Error deleting record: " . $conn->error;
+  echo "Error canceled record: " . $conn->error;
 }
-}
-if(isset($_POST['Edit']))
-{
-  $roomnum=$_POST['room-numbox'];
-  $roomtype=$_POST['room-typebox'];
-  $EDIT="UPDATE  rooms set roomtype='$roomtype' WHERE room_num='$roomnum'";
-  if($conn->query($EDIT)===true)
-  {
-  echo "Record updated successfully";
-} 
-else
- {
-  echo "Error updating record: " . $conn->error;
-}
+    }
 }
 
 ?>
 <div id="background2">
- <form action="rooms_serv.php" method="post">
-    <label for="room num">Room Number</label>
-<input type="text" placeholder="room_num" name="room-numbox">
-  <label for="room type">Room Type</label>
- <input type="text" placeholder="room_type" name="room-typebox">
+ <form action="reservation.php" method="post">
+ <label for="Email">Email</label>
+<input type="text" placeholder="Email" name="Ebox">
+
+    <label for="Pin">Manger's Pin</label>
+<input type="password" placeholder="Pin" name="pinbox">
+
+ 
   <br>
-  <button type="submit"name="Add" >Add</button>  
-  <button type="submit"name="Edit" >Edit</button>
-  <button type="submit"name="Delete" >Delete</button>  
+  <button type="submit"name="Cancel" >Cancel</button>  
 </form>
 </div>
 <header>
 <div class="menu" id="menuid">
     <a href='receptionist.php'>Receptionist</a>
      <a href="ViewAll.php">View All Users</a>
-     <a href='reservation.php'>Reservation</a>
+     <a href='rooms_serv.php'>Rooms Service</a>
+
 </div>
 </header>
 </html>
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-
-</style>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -185,7 +161,7 @@ session_start();
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$query = "SELECT * FROM rooms";
+$query = "SELECT * FROM reservation";
 $result = mysqli_query($conn,$query);
  
 
@@ -193,16 +169,16 @@ $result = mysqli_query($conn,$query);
 <html>
 <form method="post" action="">
   <div id="background">
-<table class="table table-bordered">
+<table class="table table-bordered" style="margin-left:65px;">
 <thead>
 <tr>
 
-	<th>Room_Num</th>
+	<th>Email</th>
+	<th>National_ID</th>
 	<th>Room_Type</th>
-	<th>Check_In</th>
-	<th>Check_Out</th>
-  
-	 
+	<th>Payment</th>
+    <th>Check_In</th>
+    <th>Check_Out</th>
 </tr>
 </thead>
 </div>
@@ -214,12 +190,13 @@ while($row = mysqli_fetch_array($result))
 ?>
 <tr>
   
-	<td><?= $row['room_num']; ?></td>
-	<td><?= $row['roomtype']; ?></td>
-	<td><?=  $row['check_in']; ?></td>
-	<td><?= $row['check_out']; ?></td>
-  
-	 
+	<td><?= $row['email']; ?></td>
+	<td><?= $row['national id']; ?></td>
+	<td><?=  $row['roomtype']; ?></td>
+    <td><?= $row['payment']; ?></td>
+	<td><?= $row['check_in']; ?></td>
+    <td><?= $row['check_out']; ?></td>
+	
 </tr>
 <?php
  
@@ -229,6 +206,4 @@ while($row = mysqli_fetch_array($result))
  
 </form>
 
-</body>
-</html>
 </html>

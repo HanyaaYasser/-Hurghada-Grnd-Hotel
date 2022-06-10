@@ -1,4 +1,5 @@
 <html>
+
   <form action="" method="post">
   <form>
         <h3>Login Here</h3>
@@ -8,6 +9,9 @@
 
         <label for="password">Password</label>
         <input type="password" placeholder="Password" name="Pbox">
+
+        <label for="ID">ID  /  If you are a customer, do not enter the ID</label>
+        <input type="password" placeholder="ID" name="IDbox">
 
   <br>
   <button type="submit"name="Login" >Login</button> 
@@ -97,28 +101,28 @@ if(isset($_POST['Login']))
 {
   $Email=$_POST['Ebox'];
   $Password=$_POST['Pbox'];
-  $query="SELECT ID from info where email = '$Email' and password = '$Password'";
+  $ID=$_POST['IDbox'];
+  $query="SELECT ID,email,password from info where email = '$Email' and password = '$Password'";
   $result=mysqli_query($conn,$query);
   $count=mysqli_num_rows($result);
-  if($_SESSION['ID'] = '1')
+  if($ID == '2')
   {
         ?>
 		<script>
-		window.location.href="welcome.php";
-    hide.location.href="receptionist.php";
-		</script>
-		<?php
-}
-    elseif($_SESSION['ID'] = '2')
-    {
-    ?>
-		<script>
 		window.location.href="receptionist.php";
-    document.href("welcome.php").style.display = "hidden";
 		</script>
 		<?php
-    }
-    
 }
+elseif($ID == '')
+{
+  ?>
+  <script>
+  window.location.href="welcome.php";
+  
+  </script>
+  <?php
+}
+}
+
 ?>
 </html>
