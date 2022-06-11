@@ -26,7 +26,7 @@
             <h1> Enjoy A Luxury Experience </h1>
             <!-- <button> <a href="log In.php" class="log_button" > <span> <h3> Log In </h3></span></a> </button> -->
             <a href="log In.php" class="log_button" ><h3 style="margin-left:280px;"> Log In </h3></a>
-            <a href="sign up.php" class="sign_button" ><h3 style="margin-left:280px;"> Sign Up </h3></a>
+            <a href="registration.php" class="sign_button" ><h3 style="margin-left:280px;"> Sign Up </h3></a>
         </div>
   
 
