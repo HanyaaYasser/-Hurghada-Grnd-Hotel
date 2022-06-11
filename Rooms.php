@@ -20,7 +20,6 @@
                     <div class="dropdown-content">
                     <a href="page2.html">Rooms 1</a>
                       <a href="Rooms.php">Rooms 2</a>
-                      <a href="#">Rooms 3</a>
                     </div>
                   </div>
                   <a href="about.html"> About </a>
