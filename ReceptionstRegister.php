@@ -1,16 +1,19 @@
 <html>
 <head>
-
-</head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</head>
 
 <body>
 
 <?php
+ include "QCNavBar.php";
 
 ?>
 </body>
-
-<form action="ReceptionstRegister.php" method="post">
+<div class="container">
+<form action="ReceptionstRegisterConnection.php" method="post">
     <label for="FirstName"><b>FirstName</b></label>
     <input type="text" placeholder="Enter FirstName" name="FirstName" id="FirstName" required>
 	
@@ -31,6 +34,7 @@
     <input type="radio" id="Female" name="Gender" value="Female">
     <label for="Female">Female</label><br>
     <button type="submit">Register</button>
+</div>
 </form>
 
 </html>
