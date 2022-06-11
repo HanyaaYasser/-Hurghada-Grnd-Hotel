@@ -24,10 +24,8 @@
                     <div class="dropdown-content">
                       <a href="page2.html">Rooms 1</a>
                       <a href="Rooms.php">Rooms 2</a>
-                      <a href="#">Rooms 3</a>
                     </div>
-                  </div>
-                <!-- <a href="rooms"> Rooms </a> -->
+                 </div>
                 <a href="about.html"> About </a>
                 <a href="Restaurant.php"> Restaurant</a>
                 <a href="contact.php"> Contact us </a>
