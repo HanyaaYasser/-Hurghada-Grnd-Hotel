@@ -1,7 +1,7 @@
 
 <html>
     <form action="" method="post"></form>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  <!--meta tag defines metadata abount an HTML doc, metadata is data(info) about data. used by browsers and other web services. viewport is the user's visible area of a web page.--->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -20,6 +20,7 @@
                     <div class="dropdown-content">
                     <a href="page2.html">Rooms 1</a>
                       <a href="Rooms.php">Rooms 2</a>
+                      <a href="#">Rooms 3</a>
                     </div>
                   </div>
                   <a href="about.html"> About </a>
@@ -193,10 +194,10 @@ if ($result->num_rows > 0) {
         }
       }
           ?>
-      <div class="butn-dark1"> <a href="Book Now .php"><span>Book Now</span></a> </div>
-      <div class="butn-dark2"> <a href="Book Now .php"><span>Book Now</span></a> </div>
-      <div class="butn-dark3"> <a href="Book Now .php"><span>Book Now</span></a> </div>
-      <div class="butn-dark4"> <a href="Book Now .php"><span>Book Now</span></a> </div>
+      <div class="butn-dark1"> <a href="Book Now.php"><span>Book Now</span></a> </div>
+      <div class="butn-dark2"> <a href="Book Now.php"><span>Book Now</span></a> </div>
+      <div class="butn-dark3"> <a href="Book Now.php"><span>Book Now</span></a> </div>
+      <div class="butn-dark4"> <a href="Book Now.php"><span>Book Now</span></a> </div>
  
       <div class="flip-box">
   <div class="flip-box-inner">
@@ -1268,8 +1269,8 @@ if ($result->num_rows > 0) {
 
 .reservations .text {
     margin-left: 10px;
-    margin-top:5px;
-    color:#aa8453;
+    margin-top:-20px;
+    color:#222;
 }
 .reservations .text p {
     font-size: 20px;
@@ -1278,8 +1279,8 @@ if ($result->num_rows > 0) {
 }
 .reservations .text a {
     font-size: 15px;
-    margin-left:50px;
-    color: #222;
+    margin-left:10px;
+    color: #fff;
     font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: 1px;
 }
