@@ -1,0 +1,253 @@
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+     <!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+
+    <header>
+        <nav>
+          <div class="header">
+            <div class="header-right">
+                <a href="welcome.php"> Home </a>
+                <div class="dropdown">
+                    <button class="dropbtn">Rooms & Suits</button>
+                    <div class="dropdown-content">
+                      <a href="page2.html"> Room 1</a>
+                      <a href="Rooms.php"> Room 2</a>
+                    </div>
+                  </div>
+                
+                <a href="about.html"> About </a>
+                <a href="Restaurant.php"> Restaurant</a>
+                <a href="contact.html"> Contact us </a>
+                <a href="log In.php"> Login</a>
+                
+            </div>
+          </div>
+        </nav>
+ </header>
+
+ <section class="contact section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 animate-box" ></div>
+            <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked" ></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            <div class="section-subtitle"> hurghada grnd hotel</div>
+            <div class="section-title"> Contact Us </div>
+            <p> Get in touch to fulfill all your demands and needs! </p>
+        </div>
+    </div>
+    <div class="reservations">
+        <div class="icon"> 
+            <span class="flaticon-call"></span>
+        </div>
+        <div class="text">
+            <p> Reservation </p> <a href="tel:855-100-4444"> 855 100 4444</a>
+            <p> Email info </p> <a href="HrghadaGrnd@hotmail.com"> HrghadaGrnd@hotmail.com </a>
+        </div>
+    </div>
+</div>
+    </section>
+</body>
+</html>
+
+<style>
+    body {
+    background-color: #f8f5f0 ;
+}
+
+    /* Style the header with a grey background and some padding */
+.header {
+  /* overflow: hidden; */
+  padding: 20px 10px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color:#8e6d45;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header .logo {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  color:white;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+    float: right;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    align-items: right;
+    padding: 10px ;
+    padding-left: 690px;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color:#8e6d45;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn { color: white; }
+
+
+
+  .checked {
+    color: orange;
+    
+}
+.fa-star {
+    margin-bottom: 30px;
+}
+
+  .section-subtitle{
+    font-size: 15px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    color: #666;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+}
+
+p{
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+.reservations {
+    display: flex;
+    align-items: center;
+}
+
+.reservations .text {
+    margin-left: 20px;
+}
+
+.reservations .text a {
+    font-size: 24px;
+    color: #8e6d45;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+}
+
+.reservations .icon {
+    position: relative;
+    top: 3px;
+}
+.reservations .icon span {
+    font-size: 35px;
+    color: #8e6d45;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+.section-title{
+    font-size: 45px;
+    font-family: 'Gilda Display', serif;
+    font-weight: 400;
+    color: #222;
+    position: relative;
+    margin-bottom: 20px;
+    line-height: 1.25em;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+}
+
+</style>
