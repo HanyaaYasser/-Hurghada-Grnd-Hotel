@@ -6,7 +6,7 @@ include "function.php";
 $Email=$password='';
 //errors array
 $errors = array('email'=>'', 'password'=>'');
-if($_SERVER['REQUEST_METHOD'] == "POST")
+if($_SERVER['REQUEST_METHOD'] == "POST")//bashof el data el bakhodha men el database zay el data el badkhalha
 {
     //something was posted
     $Email=$_POST['email'];
@@ -75,11 +75,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <body class="background">
         <div class="box">
 
-            <form name="" method="post">
+            <form name="" method="post" autocomplete="off">
             <h3>Login Here</h3>
+            <p>Suggestions: <span id="txtHint"></span></p>
             <label for="Email">Email</label>
-                <input class="textbox" type="text" name="email" placeholder="Email" value="<?php echo $Email ?>" required><br>
+                <input class="textbox" type="text" name="email" placeholder="Email" onkeyup="showHint(this.value)" value="<?php echo $Email ?>" required><br>
                 <span class="error"><?php echo $errors['email']; ?></span><br>
+
 
                 <label for="password">Password</label>
                 <input class="textbox" type="password" name="password" placeholder="Password" value="<?php echo $password ?>" required><br>
@@ -92,6 +94,29 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             </form>
         </div>
     </body>
+    <script>
+function showHint(str)
+{
+    if(str.length ==0)
+    {
+        document.getElementById("txtHint").innerHTML="";
+        return;
+    }
+    else{
+        var xmlhttp= new XMLHttpRequest();// request object
+        xmlhttp.onreadystatechange=function() // onreadystatechange defines a function to be called when the readyState property changes
+        {
+            if(this.readyState==4 && this.status==200)  // readyState: status of the request. 4 means en el request finished and response is ready. status: return status no. of the request.
+            {
+                document.getElementById("txtHint").innerHTML=this.responseText; // get the response data as a string 
+            }
+        };
+        xmlhttp.open("GET","gethint.php?q="+str,true) // specifies the request (method, url, asynchronous:true). gethint.php el php file checks an array of names and returns corresponding names
+        xmlhttp.send(); // sends request to server
+    }
+
+}
+    </script>
 </html>
 <style>
      body{
@@ -130,7 +155,7 @@ form h3{
 
 label{
     display: block;
-    margin-top: 30px;
+    margin-top: 5px;
     font-size: 16px;
     font-weight: 500;
 }
