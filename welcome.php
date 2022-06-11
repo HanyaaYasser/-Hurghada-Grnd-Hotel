@@ -318,7 +318,7 @@ if ($result->num_rows > 0) {
                     <div class="footer-column footer-explore">
                         <h3 class="footer-title" style="color: aliceblue;" > Explore </h3>
                         <ul class="footer-explore-list list-unstyled">
-                            <li><a href="welcome.html" style="color:gray">Home</a></li>
+                            <li><a href="welcome.php" style="color:gray">Home</a></li>
                             <li><a href="page2.html" style="color:gray">Rooms & Suites</a></li>
                             <li><a href="Restaurant.php" style="color:gray">Restaurant</a></li>
                             <li><a href="about.html" style="color:gray">About Hotel</a></li>
