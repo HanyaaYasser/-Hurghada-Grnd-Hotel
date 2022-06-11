@@ -24,11 +24,13 @@
                     <div class="dropdown-content">
                       <a href="page2.html">Rooms 1</a>
                       <a href="Rooms.php">Rooms 2</a>
+                      <a href="#">Rooms 3</a>
                     </div>
-                 </div>
+                  </div>
+                <!-- <a href="rooms"> Rooms </a> -->
                 <a href="about.html"> About </a>
                 <a href="Restaurant.php"> Restaurant</a>
-                <a href="contact.html"> Contact us </a>
+                <a href="contact.php"> Contact us </a>
                 <a href="log In.php"> Login</a>
                 
             </div>
@@ -39,15 +41,17 @@
 
     <section class="main">
         <div>
+            <div class="stars"style="margin-left:250px;">
            <center> <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked" ></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </center>
-            <h2> Luxury Hotel and Best Resort </h2>
+</div>
+            <h2 style="margin-left:300px;"> Luxury Hotel and Best Resort </h2>
             <h1> Enjoy A Luxury Experience </h1>
-            <a href="#rooms" class="main_button" > <span>Rooms & Suits </span></a>
+            <a href="Rooms.php" class="main_button" > <span>Rooms & Suits </span></a>
 
         </div>
   
@@ -68,34 +72,71 @@
         <div class="container2">
             <div class="row">
                 <div class="col-md-6 animate-box" ></div>
+                <div class="stars2" style="margin-top:-50px; margin-left:-400px;">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked" ></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
+</div>
 
-                <div class="about-subtitle"> HURGHADA GRND HOTEL </div>
-                <div class="about-title"> Enjoy a Luxury <br> Experience </div>
-                <p> Welcome to the best five-star deluxe hotel in Egypt.</p>
+                <p style="margin-left:-90px; margin-top:0px;font-size: 20px; font-family: 'Barlow Condensed', sans-serif;font-weight: 400;color: #666;">  HURGHADA GRND HOTEL </p>
+
+           <h1 style="margin-left:-180px;  margin-top:30px; font-size: 50px;font-family: 'Barlow Condensed', sans-serif;font-weight: 400;color: #666;">Enjoy a Luxury <br>  Experience </h1>
+                <p style="margin-left:-250px; margin-top:160px;"> Welcome to the best five-star deluxe hotel in Egypt.</p>
     
                 <!--call-->
                 <div class="reservations">
                     <div class="text">
-                        <p> Reservation </p> <a href="tel:855-100-4444"> 855 100 4444</a>
+                        <p style="margin-left:-250px; margin-top:250px; font-size: 20px;"> Reservation </p> <a href="tel:855-100-4444" style="margin-left:-250px; margin-top:10px; font-size: 20px;"> 855 100 4444</a>
                     </div>
                 </div>
             </div>
-            <div class="col col-md-3 animate-box" >
-                <img src="images/rest.jpg" width="95" height="84" style="margin:10px " >
+            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp"style="width:300px; height:450px; margin-left:350px;  margin-top:-300px; ">
+                <?php
+                  $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT img11 FROM room_image3"; 
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+                          <img style="margin:10px;width:100%;height:400px; " src='<?=$row['img11'];?>'></img>
+                        <?php
+        }
+      }
+          ?>
             </div>
-            <div class="col col-md-3 animate box" > 
-                <img src="images/2.jpg"   width="95" height="84" style="float: right;" justify-content="space-between" >
+            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp" style="width:300px; height:450px; margin-left:650px; margin-top:-550px;" > 
+            <?php
+                  $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hotel";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql = "SELECT img12 FROM room_image3"; 
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      ?>
+                        <img style="margin:10px;width:100%;height:400px; " src='<?=$row['img12'];?>'></img>
+                        <?php
+        }
+      }
+          ?>
             </div>
         </div>
     </section>
 
      <!----------Rooms---------->
-<section class="rooms1 section-padding bg-cream" data-scroll-index="1">
+<section class="rooms1 section-padding bg-cream" data-scroll-index="1" style="margin-top:150px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -318,7 +359,7 @@ if ($result->num_rows > 0) {
                     <div class="footer-column footer-explore">
                         <h3 class="footer-title" style="color: aliceblue;" > Explore </h3>
                         <ul class="footer-explore-list list-unstyled">
-                            <li><a href="welcome.php" style="color:gray">Home</a></li>
+                            <li><a href="welcome.html" style="color:gray">Home</a></li>
                             <li><a href="page2.html" style="color:gray">Rooms & Suites</a></li>
                             <li><a href="Restaurant.php" style="color:gray">Restaurant</a></li>
                             <li><a href="about.html" style="color:gray">About Hotel</a></li>
@@ -360,3 +401,194 @@ if ($result->num_rows > 0) {
 </footer>
 </body>
 </html>
+<style>
+    .js .animate-box {
+    opacity: 0;
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.animated.bounceIn,
+.animated.bounceOut {
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+}
+
+.animated.flipOutX,
+.animated.flipOutY {
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+}
+
+@-webkit-keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+}
+    .main {
+
+width: 100%;
+min-height: 100vh;
+display:flex;
+align-items: center;
+background-image: url(all.jpeg);
+height: 100%;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+
+
+}
+.main h2{
+    font-family: "Gilda Display", serif;
+    font-size: 15px;
+    font-weight: 100px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    animation-delay: 0.4s;
+    margin: 0px 0px 20px;
+ 
+}
+
+.main h1 {
+ 
+    margin-bottom: 20px;
+    margin-top: 8px;
+    margin-left:350px;
+    font-family: "Gilda Display", serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    line-height: 1.35em;
+    animation-delay: 0.6s;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    letter-spacing: 15px;
+   text-align: center;
+ 
+}
+.checked {
+    color: orange;
+    
+}
+.fa-star {
+    /* text-align: center; */
+    margin-bottom: 30px;
+}
+
+/* .main h2 span {
+    display: inline-block;
+    margin-top: 5px;
+    color: white;
+    font-size: 4em;
+    font-weight: 600;
+
+} */
+
+.main_button {
+    color: white;
+    border-style: solid;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    letter-spacing: 1px;
+    /* border-radius: 15px; */
+    margin-bottom: 40px;
+    align-items: center ;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 850px;
+
+}
+.main_button span {
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+ }
+
+.main_button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.main_button:hover span {
+  padding-right: 25px;
+}
+
+.main_button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+</style>
