@@ -28,7 +28,7 @@
                  </div>
                 <a href="about.html"> About </a>
                 <a href="Restaurant.php"> Restaurant</a>
-                <a href="contact.php"> Contact us </a>
+                <a href="contact.html"> Contact us </a>
                 <a href="log In.php"> Login</a>
                 
             </div>
