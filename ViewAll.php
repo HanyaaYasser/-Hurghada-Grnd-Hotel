@@ -77,7 +77,7 @@ while($row = mysqli_fetch_array($result))
 ?>
 <tr>
   
-	<td><?= $row['ID']; ?></td>
+	<td><?= $row['user_id']; ?></td>
 	<td><?= $row['firstname']; ?></td>
 	<td><?=  $row['lastname']; ?></td>
 	<td><?= $row['email']; ?></td>
