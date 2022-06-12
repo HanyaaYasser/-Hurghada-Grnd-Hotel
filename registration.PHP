@@ -93,7 +93,7 @@ button{
     }</style>
 
 
-    <form name="" method="post" action="welcome.php" autocomplete="off" >
+    <form name="" method="post" action="123.php" autocomplete="off" >
         <h3>Sign Up</h3>
 
 
@@ -153,48 +153,4 @@ Confrim_Password.onkeyup = validatePassword;
 </script>
 </html>
 
-<?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$DB = "hotel";
-$conn=mysqli_connect($servername,$username,$password,$DB);
-
-if(!$conn)
-{
-  die("connection failed".mysqli_connect_error());
-}
-if(isset($_POST['submit']))
-{
-    $Add="INSERT INTO rooms (room_num, roomtype, check_in,check_out) VALUES('".$_POST["room-numbox"]."','".$_POST["room-typebox"]."','','')";
-    if($conn->query($Add)===true)
-    {
-        echo 'new record inserted';
-    }
-    else 
-    {
-      echo "Error Adding record: " . $conn->error;
-    }
-}
-$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-if(!$con)
-{
-    die(mysqli_connect_error($con));
-}
-
-if(isset($_POST['submit']))
-{
-    $insert="INSERT INTO info (firstname,username,email,password,confirm_password,national id,gender,img) VALUES('".$_POST["Name"]."','".$_POST["username"]."','".$_POST["Email"]."','".$_POST["password"]."','".$_POST["Confirm_Password"]."','".$_POST["National_ID"]."','".$_POST["Gender"]."','".$_POST["image"]."')";
-    if($con->query($insert)===true)
-    {
-        echo 'new record inserted';
-    }
-    else 
-    {
-        die("error".mysqli_error($con));
-    }
-}
-
-?>
