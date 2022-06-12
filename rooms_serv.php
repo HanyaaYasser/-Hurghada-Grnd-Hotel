@@ -55,17 +55,25 @@ table, th, td {
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
  padding: 0.02px 50px 120px 10px;
- height:60%;
- width:25%;
+ height:75%;
+ width:30%;
   background:blur(20px);
   margin-top:500px;
   margin-left:1400px;
-  background-attachment: absolute;
+  background-attachment: relative;
 }
 label{
     display: block;
     margin-top: 70px;
     margin-left: 35%;
+    font-size: 30px;
+    font-weight: 900;
+    padding: 0 10px;
+}
+#label2{
+  display: block;
+    margin-top: 70px;
+    margin-left: 22%;
     font-size: 30px;
     font-weight: 900;
     padding: 0 10px;
@@ -95,6 +103,21 @@ button{
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+}
+#button2{
+    margin-top: 40px;
+    margin-left: 20%;
+    position : middle;
+    width: 20%;
+    background-color: #222;
+    color: #aa8453;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
 }
 </style>
 <?php
@@ -150,6 +173,29 @@ else
 }
 
 ?>
+<script>
+function add_room(){
+    var = document.getElementById("room").textContent; //text content returns-->This element has extra spacing and contains a span element.
+    document.getElementById("room").textContent=++var;
+}    
+
+function less_room(){
+    var=document.getElementById("room").textContent;
+    if(var==1)
+    alert("you reserve less than 1 room !");
+    else
+    {
+        document.getElementById("room").textContent=--var;               
+    } 
+ }
+render(){
+  if(add_room()){
+    retrun (<div>{add_room()} var)
+  }
+  else if(less_room()){
+  }
+}
+ </script>
 <div id="background2">
  <form action="rooms_serv.php" method="post">
     <label for="room num">Room Number</label>
@@ -157,6 +203,13 @@ else
   <label for="room type">Room Type</label>
  <input type="text" placeholder="room_type" name="room-typebox">
   <br>
+  <label for="room type" id = 'label2'>Choose the number of rooms</label>
+  <?php
+ // echo var;
+ echo "<button class = 'btn' id = 'button2' onclick='add_room()' >-</button><span name='room' style= 'font-size: x-large;'
+  id='room' value='1'></span></span><button class = 'btn' id ='button2' onclick='less_room()'>+</button>  "
+  //return (<div>{myObject} tree</div>);;
+?>
   <button type="submit"name="Add" >Add</button>  
   <button type="submit"name="Edit" >Edit</button>
   <button type="submit"name="Delete" >Delete</button>  
