@@ -116,8 +116,7 @@ button{
     border-radius: 3px;
     cursor: pointer;
     padding: 10px 0;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
+    border-radius: 4px;
 }
 </style>
 <?php
