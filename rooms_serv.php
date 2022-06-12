@@ -206,7 +206,7 @@ render(){
   <?php
  // echo var;
  echo "<button class = 'btn' id = 'button2' onclick='add_room()' >-</button><span name='room' style= 'font-size: x-large;'
-  id='room' value='1'></span></span><button class = 'btn' id ='button2' onclick='less_room()'>+</button>  "
+  id='room'></span></span><button class = 'btn' id ='button2' onclick='less_room()'>+</button>  "
   //return (<div>{myObject} tree</div>);;
 ?>
   <button type="submit"name="Add" >Add</button>  
