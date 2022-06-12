@@ -234,7 +234,6 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "hotel";
-session_start();
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
