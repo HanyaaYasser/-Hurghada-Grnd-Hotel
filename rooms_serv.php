@@ -1,3 +1,7 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
 <style>
     body
     {
@@ -116,7 +120,8 @@ button{
     border-radius: 3px;
     cursor: pointer;
     padding: 10px 0;
-    border-radius: 4px;
+  border-radius: 4px;
+  
 }
 </style>
 <?php
@@ -174,26 +179,23 @@ else
 ?>
 <script>
 function add_room(){
-    var = document.getElementById("room").textContent; //text content returns-->This element has extra spacing and contains a span element.
-    document.getElementById("room").textContent=++var;
+    var x = document.getElementById("room").textContent; //text content returns-->This element has extra spacing and contains a span element.
+    document.getElementById("room").textContent=++x;
 }    
 
 function less_room(){
-    var=document.getElementById("room").textContent;
-    if(var==1)
+    var x =document.getElementById("room").textContent;
+    if(x==1)
     alert("you reserve less than 1 room !");
     else
     {
-        document.getElementById("room").textContent=--var;               
+        document.getElementById("room").textContent=--x;               
     } 
  }
-render(){
-  if(add_room()){
-    retrun (<div>{add_room()} var)
-  }
-  else if(less_room()){
-  }
-}
+// ReactDOM.render(()=>{
+// retur<div>{add_room()}</div>
+// }
+// );
  </script>
 <div id="background2">
  <form action="rooms_serv.php" method="post">
@@ -205,9 +207,8 @@ render(){
   <label for="room type" id = 'label2'>Choose the number of rooms</label>
   <?php
  // echo var;
- echo "<button class = 'btn' id = 'button2' onclick='add_room()' >-</button><span name='room' style= 'font-size: x-large;'
-  id='room'></span></span><button class = 'btn' id ='button2' onclick='less_room()'>+</button>  "
-  //return (<div>{myObject} tree</div>);;
+ echo "<button type='button' class = 'btn' id = 'button2' onclick='less_room()' >-</button><span name='room' style= 'font-size: x-large;'
+  id='room'>1</span></span><button type='button' class = 'btn' id ='button2' onclick='add_room()'>+</button>  "
 ?>
   <button type="submit"name="Add" >Add</button>  
   <button type="submit"name="Edit" >Edit</button>
